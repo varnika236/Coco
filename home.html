@@ -30,32 +30,30 @@
 
     <!-- Location Button -->
     <div class="w-full max-w-md text-center">
+    <a href="https://www.google.com/maps/place/28%C2%B042'00.6%22N+77%C2%B026'24.2%22E/@28.700172,77.4374861,17z/data=!3m1!4b1!4m4!3m3!8m2!3d28.700172!4d77.440061?entry=ttu&g_ep=EgoyMDI1MDUxNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D">
       <button onclick="getLocation()" class="w-full bg-green-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition">
         Share Your Location
       </button>
+    </a>
       <p id="locationOutput" class="mt-2 text-gray-500 text-sm"></p>
     </div>
 
     <!-- Capture Animal Photo & Type Section -->
     <div class="w-full max-w-md text-center space-y-4">
-      <button onclick="triggerCamera()" class="w-full bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"><a href="camera.html">
+      <button onclick="triggerCamera()" class="w-full bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"><a href="camera2.html">
         Click Picture of Animal</a>
       </button>
 
       <div>
-        <label for="animalType" class="block text-gray-600 font-medium">Animal Type</label>
-        <input type="text" id="animalType" name="animalType" placeholder="Enter animal type" class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <label for="animalDescription" class="block text-gray-600 font-medium">Animal Description</label>
+        <input type="text" id="animalDescription" name="animalDescription" placeholder="Enter Animal Description" class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
       </div>
     </div>
 
   </div>
 
   <!-- Camera Functionality (Optional) -->
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.648085753736!2d77.4393574749593!3d28.700171881006764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf10e0c2a7745%3A0xaaa871ac3acc613b!2sRaj%20Kumar%20Goel%20Institute%20Of%20Technology!5e0!3m2!1sen!2sin!4v1747756337975!5m2!1sen!2sin"
-            width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
+ 
   <script>
     function triggerCamera() {
       alert("Camera functionality is not implemented in this demo.");
