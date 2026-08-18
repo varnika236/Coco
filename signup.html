@@ -4,10 +4,7 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sign Up | Coco</title>
 
@@ -18,10 +15,6 @@
 
     <style>
 
-        /* =========================
-           RESET
-        ========================= */
-
         * {
             margin: 0;
             padding: 0;
@@ -30,14 +23,10 @@
 
         body {
             min-height: 100vh;
-
             font-family: Inter, -apple-system, BlinkMacSystemFont,
                          "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
             background: #f6faf7;
-
             color: #17211d;
-
             display: flex;
             flex-direction: column;
         }
@@ -52,28 +41,18 @@
             font: inherit;
         }
 
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
         .navbar {
             height: 76px;
-
             display: flex;
             align-items: center;
-
             background: rgba(255,255,255,0.92);
-
             border-bottom: 1px solid #e3ebe6;
-
             backdrop-filter: blur(12px);
         }
 
         .nav-container {
             width: min(1180px, 92%);
             margin: auto;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -83,54 +62,32 @@
             display: flex;
             align-items: center;
             gap: 10px;
-
             font-size: 1.35rem;
-
             font-weight: 800;
         }
 
         .nav-logo {
             width: 42px;
             height: 42px;
-
             object-fit: contain;
         }
 
         .login-link {
             color: #1f7a4d;
-
             font-size: 0.9rem;
-
             font-weight: 700;
         }
 
-
-        /* =========================
-           MAIN
-        ========================= */
-
         .signup-section {
             flex: 1;
-
             width: min(1180px, 92%);
-
             margin: auto;
-
             padding: 55px 0;
-
             display: grid;
-
             grid-template-columns: 0.85fr 1.15fr;
-
             gap: 80px;
-
             align-items: center;
         }
-
-
-        /* =========================
-           INTRO
-        ========================= */
 
         .signup-intro {
             max-width: 470px;
@@ -138,42 +95,28 @@
 
         .eyebrow {
             display: inline-flex;
-
             align-items: center;
-
             gap: 8px;
-
             padding: 7px 12px;
-
             border-radius: 999px;
-
             background: #e7f5ec;
-
             color: #1f7a4d;
-
             font-size: 0.78rem;
-
             font-weight: 800;
-
             margin-bottom: 22px;
         }
 
         .eyebrow-dot {
             width: 7px;
             height: 7px;
-
             border-radius: 50%;
-
             background: #35a66b;
         }
 
         .signup-intro h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
-
             line-height: 1.05;
-
             letter-spacing: -2px;
-
             margin-bottom: 20px;
         }
 
@@ -183,186 +126,167 @@
 
         .signup-intro > p {
             color: #68756e;
-
             font-size: 1.05rem;
-
             margin-bottom: 30px;
         }
-
-
-        /* =========================
-           MINI STATS
-        ========================= */
 
         .impact-list {
             display: flex;
             flex-direction: column;
-
             gap: 14px;
         }
 
         .impact-item {
             display: flex;
-
             align-items: center;
-
             gap: 12px;
         }
 
         .impact-icon {
             width: 38px;
             height: 38px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             border-radius: 10px;
-
             background: #e7f5ec;
         }
 
         .impact-item span {
             color: #536159;
-
             font-size: 0.88rem;
         }
 
-
-        /* =========================
-           SIGNUP CARD
-        ========================= */
-
         .signup-card {
             width: min(480px, 100%);
-
             margin-left: auto;
-
             padding: 36px;
-
             background: white;
-
             border: 1px solid #e0e9e3;
-
             border-radius: 22px;
-
-            box-shadow:
-                0 25px 60px rgba(35,70,52,0.08);
+            box-shadow: 0 25px 60px rgba(35,70,52,0.08);
         }
 
         .card-logo {
             display: flex;
-
             justify-content: center;
-
             margin-bottom: 17px;
         }
 
         .card-logo img {
             width: 68px;
             height: 68px;
-
             object-fit: contain;
         }
 
         .card-header {
             text-align: center;
-
-            margin-bottom: 27px;
+            margin-bottom: 25px;
         }
 
         .card-header h2 {
             font-size: 1.7rem;
-
             margin-bottom: 7px;
         }
 
         .card-header p {
             color: #7a857f;
-
             font-size: 0.88rem;
         }
 
+        /* AUTH METHOD TABS */
 
-        /* =========================
-           FORM
-        ========================= */
-
-        .form-row {
+        .auth-tabs {
             display: grid;
-
             grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            padding: 5px;
+            background: #f0f5f2;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
 
-            gap: 14px;
+        .auth-tab {
+            border: none;
+            background: transparent;
+            padding: 10px;
+            border-radius: 8px;
+            color: #68756e;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .auth-tab.active {
+            background: white;
+            color: #1f7a4d;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .form-group {
             margin-bottom: 18px;
         }
 
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
         .form-label {
             display: block;
-
             margin-bottom: 7px;
-
             color: #34423b;
-
             font-size: 0.85rem;
-
             font-weight: 700;
+        }
+
+        .input-wrapper {
+            position: relative;
         }
 
         .input {
             width: 100%;
-
             padding: 13px 14px;
-
             border: 1px solid #d9e2dc;
-
             border-radius: 10px;
-
             background: #fbfdfc;
-
             color: #17211d;
-
             outline: none;
-
-            transition:
-                border-color 0.2s ease,
-                box-shadow 0.2s ease;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
         .input:focus {
             border-color: #55a879;
-
             background: white;
-
-            box-shadow:
-                0 0 0 3px rgba(44,147,96,0.10);
+            box-shadow: 0 0 0 3px rgba(44,147,96,0.10);
         }
 
-        .input::placeholder {
-            color: #a0aaa4;
+        .password-input {
+            padding-right: 70px;
         }
 
-        /* ERROR */
+        .show-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            color: #1f7a4d;
+            font-size: 0.76rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
 
         .input.error {
             border-color: #d9534f;
         }
 
-        .input.error:focus {
-            box-shadow:
-                0 0 0 3px rgba(217,83,79,0.10);
-        }
-
         .error-message {
             display: none;
-
             margin-top: 5px;
-
             color: #d9534f;
-
             font-size: 0.74rem;
         }
 
@@ -370,36 +294,66 @@
             display: block;
         }
 
+        .phone-row {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 8px;
+        }
 
-        /* =========================
-           TERMS
-        ========================= */
+        .country-code {
+            padding: 13px 8px;
+            border: 1px solid #d9e2dc;
+            border-radius: 10px;
+            background: #fbfdfc;
+            text-align: center;
+            font-weight: 700;
+            color: #34423b;
+        }
+
+        .otp-row {
+            display: grid;
+            grid-template-columns: 1fr 110px;
+            gap: 8px;
+        }
+
+        .send-otp-button {
+            border: none;
+            border-radius: 10px;
+            background: #e7f5ec;
+            color: #1f7a4d;
+            font-size: 0.78rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .send-otp-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #recaptcha-container {
+            margin: 12px 0 18px;
+            display: flex;
+            justify-content: center;
+        }
 
         .terms {
             display: flex;
-
             align-items: flex-start;
-
             gap: 9px;
-
             margin: 4px 0 22px;
-
             color: #77827c;
-
             font-size: 0.78rem;
-
             line-height: 1.5;
         }
 
         .terms input {
             margin-top: 3px;
-
             accent-color: #1f7a4d;
         }
 
         .terms a {
             color: #1f7a4d;
-
             font-weight: 700;
         }
 
@@ -407,146 +361,94 @@
             color: #d9534f;
         }
 
-
-        /* =========================
-           SIGNUP BUTTON
-        ========================= */
-
         .signup-button {
             width: 100%;
-
             padding: 14px;
-
             border: none;
-
             border-radius: 11px;
-
             background: #1f7a4d;
-
             color: white;
-
             font-weight: 800;
-
             cursor: pointer;
-
-            transition:
-                background 0.2s ease,
-                transform 0.2s ease;
         }
 
         .signup-button:hover {
             background: #17643d;
-
-            transform: translateY(-1px);
         }
 
         .signup-button:disabled {
             opacity: 0.7;
-
             cursor: not-allowed;
-
-            transform: none;
         }
 
-
-        /* =========================
-           SUCCESS MESSAGE
-        ========================= */
-
-        .success-message {
+        .message {
             display: none;
-
             margin-bottom: 18px;
-
             padding: 11px 13px;
-
             border-radius: 9px;
-
-            background: #e7f5ec;
-
-            border: 1px solid #cce6d6;
-
-            color: #1f7a4d;
-
             font-size: 0.8rem;
-
             line-height: 1.4;
-
             text-align: center;
         }
 
-        .success-message.show {
+        .message.show {
             display: block;
         }
 
+        .message.success {
+            background: #e7f5ec;
+            border: 1px solid #cce6d6;
+            color: #1f7a4d;
+        }
 
-        /* =========================
-           LOGIN LINK
-        ========================= */
+        .message.error {
+            background: #fff0ef;
+            border: 1px solid #f1c9c6;
+            color: #c53f3a;
+        }
 
         .auth-switch {
             text-align: center;
-
             margin-top: 23px;
-
             color: #758078;
-
             font-size: 0.88rem;
         }
 
         .auth-switch a {
             color: #1f7a4d;
-
             font-weight: 800;
         }
 
-
-        /* =========================
-           FOOTER
-        ========================= */
-
         footer {
             padding: 20px;
-
             text-align: center;
-
             border-top: 1px solid #e4ebe6;
-
             background: white;
-
             color: #8a948e;
-
             font-size: 0.78rem;
         }
 
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
+        .hidden {
+            display: none !important;
+        }
 
         @media (max-width: 850px) {
 
             .signup-section {
                 grid-template-columns: 1fr;
-
                 gap: 45px;
-
                 padding: 45px 0;
             }
 
             .signup-intro {
                 max-width: 650px;
-
                 margin: auto;
-
                 text-align: center;
             }
 
             .impact-list {
                 max-width: 430px;
-
                 margin: auto;
-
                 text-align: left;
             }
 
@@ -554,7 +456,6 @@
                 margin: auto;
             }
         }
-
 
         @media (max-width: 550px) {
 
@@ -566,20 +467,26 @@
                 padding: 35px 0;
             }
 
-            .signup-intro h1 {
-                font-size: 2.5rem;
-            }
-
             .signup-card {
                 padding: 27px 22px;
-
                 border-radius: 18px;
             }
 
             .form-row {
                 grid-template-columns: 1fr;
-
                 gap: 0;
+            }
+
+            .phone-row {
+                grid-template-columns: 75px 1fr;
+            }
+
+            .otp-row {
+                grid-template-columns: 1fr;
+            }
+
+            .send-otp-button {
+                padding: 11px;
             }
         }
 
@@ -587,726 +494,1371 @@
 
 </head>
 
-
 <body>
 
+<header class="navbar">
 
-    <!-- =========================
-         NAVBAR
-    ========================= -->
+    <div class="nav-container">
 
-    <header class="navbar">
+        <a href="index.html" class="logo">
 
-        <div class="nav-container">
+            <img
+                src="coco logo.png"
+                alt="Coco Logo"
+                class="nav-logo"
+            >
+
+            <span>COCO</span>
+
+        </a>
+
+        <a href="login.html" class="login-link">
+            Already have an account? Log in →
+        </a>
+
+    </div>
+
+</header>
 
 
-            <a href="index.html" class="logo">
+<main class="signup-section">
 
-                <img
-                    src="coco logo.png"
-                    alt="Coco Logo"
-                    class="nav-logo"
-                >
+    <section class="signup-intro">
 
-                <span>COCO</span>
+        <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Join the Coco community
+        </div>
 
-            </a>
+        <h1>
+            Turn your
+            <span>concern into action.</span>
+        </h1>
 
+        <p>
+            Create your Coco account and get a simple way to
+            report animals in need, contribute to rescues and
+            track your impact.
+        </p>
 
-            <a href="login.html" class="login-link">
-                Already have an account? Log in →
-            </a>
+        <div class="impact-list">
+
+            <div class="impact-item">
+                <div class="impact-icon">📸</div>
+                <span>Report animals with photos and useful details.</span>
+            </div>
+
+            <div class="impact-item">
+                <div class="impact-icon">📍</div>
+                <span>Share locations so help can reach the right place.</span>
+            </div>
+
+            <div class="impact-item">
+                <div class="impact-icon">🪙</div>
+                <span>Earn Coco Coins for meaningful contributions.</span>
+            </div>
+
+            <div class="impact-item">
+                <div class="impact-icon">🐾</div>
+                <span>Build your contribution history over time.</span>
+            </div>
 
         </div>
 
-    </header>
+    </section>
 
 
+    <section class="signup-card">
 
-    <!-- =========================
-         MAIN
-    ========================= -->
+        <div class="card-logo">
 
-    <main class="signup-section">
-
-
-        <!-- LEFT SIDE -->
-
-        <section class="signup-intro">
-
-            <div class="eyebrow">
-
-                <span class="eyebrow-dot"></span>
-
-                Join the Coco community
-
-            </div>
-
-
-            <h1>
-                Turn your
-                <span>concern into action.</span>
-            </h1>
-
-
-            <p>
-                Create your Coco account and get a simple way to
-                report animals in need, contribute to rescues and
-                track your impact.
-            </p>
-
-
-            <div class="impact-list">
-
-
-                <div class="impact-item">
-
-                    <div class="impact-icon">
-                        📸
-                    </div>
-
-                    <span>
-                        Report animals with photos and useful details.
-                    </span>
-
-                </div>
-
-
-
-                <div class="impact-item">
-
-                    <div class="impact-icon">
-                        📍
-                    </div>
-
-                    <span>
-                        Share locations so help can reach the right place.
-                    </span>
-
-                </div>
-
-
-
-                <div class="impact-item">
-
-                    <div class="impact-icon">
-                        🪙
-                    </div>
-
-                    <span>
-                        Earn Coco Coins for meaningful contributions.
-                    </span>
-
-                </div>
-
-
-
-                <div class="impact-item">
-
-                    <div class="impact-icon">
-                        🐾
-                    </div>
-
-                    <span>
-                        Build your contribution history over time.
-                    </span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- SIGNUP CARD -->
-
-        <section class="signup-card">
-
-
-            <div class="card-logo">
-
-                <img
-                    src="coco logo.png"
-                    alt="Coco Logo"
-                >
-
-            </div>
-
-
-            <div class="card-header">
-
-                <h2>
-                    Create your account
-                </h2>
-
-                <p>
-                    Start your Coco journey today.
-                </p>
-
-            </div>
-
-
-            <!-- SUCCESS MESSAGE -->
-
-            <div
-                id="successMessage"
-                class="success-message"
-            >
-                Your details look good. Authentication will be
-                connected when Firebase is added.
-            </div>
-
-
-            <form
-                id="signupForm"
-                novalidate
+            <img
+                src="coco logo.png"
+                alt="Coco Logo"
             >
 
+        </div>
 
-                <!-- NAME -->
+        <div class="card-header">
 
-                <div class="form-row">
+            <h2>Create your account</h2>
 
+            <p>Choose how you want to create your Coco account.</p>
 
-                    <div class="form-group">
-
-                        <label
-                            for="firstName"
-                            class="form-label"
-                        >
-                            First name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="firstName"
-                            name="firstName"
-                            class="input"
-                            placeholder="Varnika"
-                            autocomplete="given-name"
-                            required
-                        >
-
-                        <p
-                            id="firstNameError"
-                            class="error-message"
-                        >
-                            Please enter your first name.
-                        </p>
-
-                    </div>
+        </div>
 
 
+        <div class="auth-tabs">
 
-                    <div class="form-group">
+            <button
+                type="button"
+                class="auth-tab active"
+                id="emailTab"
+            >
+                ✉️ Email
+            </button>
 
-                        <label
-                            for="lastName"
-                            class="form-label"
-                        >
-                            Last name
-                        </label>
+            <button
+                type="button"
+                class="auth-tab"
+                id="phoneTab"
+            >
+                📱 Phone OTP
+            </button>
 
-                        <input
-                            type="text"
-                            id="lastName"
-                            name="lastName"
-                            class="input"
-                            placeholder="Saini"
-                            autocomplete="family-name"
-                            required
-                        >
-
-                        <p
-                            id="lastNameError"
-                            class="error-message"
-                        >
-                            Please enter your last name.
-                        </p>
-
-                    </div>
-
-                </div>
+        </div>
 
 
+        <div
+            id="message"
+            class="message"
+        ></div>
 
-                <!-- EMAIL -->
+
+        <!-- EMAIL SIGNUP -->
+
+        <form
+            id="emailSignupForm"
+            novalidate
+        >
+
+            <div class="form-row">
 
                 <div class="form-group">
 
                     <label
-                        for="email"
+                        for="firstName"
                         class="form-label"
                     >
-                        Email address
+                        First name
                     </label>
 
                     <input
-                        type="email"
-                        id="email"
-                        name="email"
+                        type="text"
+                        id="firstName"
                         class="input"
-                        placeholder="you@example.com"
-                        autocomplete="email"
-                        required
+                        placeholder="Varnika"
+                        autocomplete="given-name"
                     >
 
                     <p
-                        id="emailError"
+                        id="firstNameError"
                         class="error-message"
                     >
-                        Please enter a valid email address.
+                        Please enter your first name.
                     </p>
 
                 </div>
 
 
+                <div class="form-group">
 
-                <!-- PASSWORD -->
+                    <label
+                        for="lastName"
+                        class="form-label"
+                    >
+                        Last name
+                    </label>
 
-                <div class="form-row">
+                    <input
+                        type="text"
+                        id="lastName"
+                        class="input"
+                        placeholder="Saini"
+                        autocomplete="family-name"
+                    >
+
+                    <p
+                        id="lastNameError"
+                        class="error-message"
+                    >
+                        Please enter your last name.
+                    </p>
+
+                </div>
+
+            </div>
 
 
-                    <div class="form-group">
+            <div class="form-group">
 
-                        <label
-                            for="password"
-                            class="form-label"
-                        >
-                            Password
-                        </label>
+                <label
+                    for="email"
+                    class="form-label"
+                >
+                    Email address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    class="input"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                >
+
+                <p
+                    id="emailError"
+                    class="error-message"
+                >
+                    Please enter a valid email address.
+                </p>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label
+                        for="password"
+                        class="form-label"
+                    >
+                        Password
+                    </label>
+
+                    <div class="input-wrapper">
 
                         <input
                             type="password"
                             id="password"
-                            name="password"
-                            class="input"
+                            class="input password-input"
                             placeholder="Create password"
                             autocomplete="new-password"
-                            required
                         >
 
-                        <p
-                            id="passwordError"
-                            class="error-message"
+                        <button
+                            type="button"
+                            class="show-password"
+                            data-target="password"
                         >
-                            Password must contain at least 6 characters.
-                        </p>
+                            Show
+                        </button>
 
                     </div>
 
-
-
-                    <div class="form-group">
-
-                        <label
-                            for="confirmPassword"
-                            class="form-label"
-                        >
-                            Confirm password
-                        </label>
-
-                        <input
-                            type="password"
-                            id="confirmPassword"
-                            name="confirmPassword"
-                            class="input"
-                            placeholder="Repeat password"
-                            autocomplete="new-password"
-                            required
-                        >
-
-                        <p
-                            id="confirmPasswordError"
-                            class="error-message"
-                        >
-                            Passwords do not match.
-                        </p>
-
-                    </div>
+                    <p
+                        id="passwordError"
+                        class="error-message"
+                    >
+                        Password must contain at least 6 characters.
+                    </p>
 
                 </div>
 
 
+                <div class="form-group">
 
-                <!-- TERMS -->
+                    <label
+                        for="confirmPassword"
+                        class="form-label"
+                    >
+                        Confirm password
+                    </label>
 
-                <label
-                    class="terms"
-                    id="termsContainer"
+                    <div class="input-wrapper">
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            class="input password-input"
+                            placeholder="Repeat password"
+                            autocomplete="new-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            data-target="confirmPassword"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                    <p
+                        id="confirmPasswordError"
+                        class="error-message"
+                    >
+                        Passwords do not match.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <label
+                class="terms"
+                id="termsContainer"
+            >
+
+                <input
+                    type="checkbox"
+                    id="terms"
                 >
+
+                <span>
+
+                    I agree to Coco's
+
+                    <a href="#">
+                        Terms of Service
+                    </a>
+
+                    and
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>.
+
+                </span>
+
+            </label>
+
+
+            <button
+                type="submit"
+                class="signup-button"
+                id="emailSignupButton"
+            >
+                Create Coco account
+            </button>
+
+        </form>
+
+
+        <!-- PHONE SIGNUP -->
+
+        <form
+            id="phoneSignupForm"
+            class="hidden"
+            novalidate
+        >
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label
+                        for="phoneFirstName"
+                        class="form-label"
+                    >
+                        First name
+                    </label>
 
                     <input
-                        type="checkbox"
-                        id="terms"
-                        required
+                        type="text"
+                        id="phoneFirstName"
+                        class="input"
+                        placeholder="Varnika"
                     >
 
-                    <span>
+                    <p
+                        id="phoneFirstNameError"
+                        class="error-message"
+                    >
+                        Please enter your first name.
+                    </p>
 
-                        I agree to Coco's
+                </div>
 
-                        <a href="#">
-                            Terms of Service
-                        </a>
 
-                        and
+                <div class="form-group">
 
-                        <a href="#">
-                            Privacy Policy
-                        </a>.
+                    <label
+                        for="phoneLastName"
+                        class="form-label"
+                    >
+                        Last name
+                    </label>
 
-                    </span>
+                    <input
+                        type="text"
+                        id="phoneLastName"
+                        class="input"
+                        placeholder="Saini"
+                    >
 
+                    <p
+                        id="phoneLastNameError"
+                        class="error-message"
+                    >
+                        Please enter your last name.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label
+                    class="form-label"
+                    for="phoneNumber"
+                >
+                    Phone number
                 </label>
 
+                <div class="phone-row">
 
+                    <div class="country-code">
+                        +91
+                    </div>
 
-                <!-- BUTTON -->
+                    <input
+                        type="tel"
+                        id="phoneNumber"
+                        class="input"
+                        placeholder="9876543210"
+                        maxlength="10"
+                    >
 
-                <button
-                    type="submit"
-                    class="signup-button"
-                    id="signupButton"
+                </div>
+
+                <p
+                    id="phoneError"
+                    class="error-message"
                 >
-                    Create Coco account
-                </button>
+                    Enter a valid 10-digit Indian phone number.
+                </p>
 
-            </form>
-
-
-            <p class="auth-switch">
-
-                Already have an account?
-
-                <a href="login.html">
-                    Log in
-                </a>
-
-            </p>
-
-        </section>
-
-    </main>
+            </div>
 
 
-
-    <footer>
-
-        © 2026 Coco · Help. Rescue. Make a Difference.
-
-    </footer>
+            <div id="recaptcha-container"></div>
 
 
+            <div class="form-group">
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
+                <label
+                    class="form-label"
+                    for="otp"
+                >
+                    OTP
+                </label>
 
-    <script>
+                <div class="otp-row">
 
-        /* =========================
-           GET ELEMENTS
-        ========================= */
+                    <input
+                        type="text"
+                        id="otp"
+                        class="input"
+                        placeholder="Enter 6-digit OTP"
+                        maxlength="6"
+                    >
 
-        const signupForm =
-            document.getElementById("signupForm");
+                    <button
+                        type="button"
+                        class="send-otp-button"
+                        id="sendOtpButton"
+                    >
+                        Send OTP
+                    </button>
 
-        const firstName =
-            document.getElementById("firstName");
+                </div>
 
-        const lastName =
-            document.getElementById("lastName");
+                <p
+                    id="otpError"
+                    class="error-message"
+                >
+                    Enter the OTP sent to your phone.
+                </p>
 
-        const email =
-            document.getElementById("email");
-
-        const password =
-            document.getElementById("password");
-
-        const confirmPassword =
-            document.getElementById("confirmPassword");
-
-        const terms =
-            document.getElementById("terms");
-
-        const termsContainer =
-            document.getElementById("termsContainer");
-
-        const signupButton =
-            document.getElementById("signupButton");
-
-        const successMessage =
-            document.getElementById("successMessage");
+            </div>
 
 
-        /* =========================
-           ERROR ELEMENTS
-        ========================= */
+            <label
+                class="terms"
+                id="phoneTermsContainer"
+            >
 
-        const firstNameError =
-            document.getElementById("firstNameError");
+                <input
+                    type="checkbox"
+                    id="phoneTerms"
+                >
 
-        const lastNameError =
-            document.getElementById("lastNameError");
+                <span>
 
-        const emailError =
-            document.getElementById("emailError");
+                    I agree to Coco's
 
-        const passwordError =
-            document.getElementById("passwordError");
+                    <a href="#">
+                        Terms of Service
+                    </a>
 
-        const confirmPasswordError =
-            document.getElementById("confirmPasswordError");
+                    and
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>.
+
+                </span>
+
+            </label>
 
 
-        /* =========================
-           EMAIL VALIDATION
-        ========================= */
+            <button
+                type="submit"
+                class="signup-button"
+                id="phoneSignupButton"
+            >
+                Verify & Create Account
+            </button>
 
-        function isValidEmail(value) {
+        </form>
 
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+        <p class="auth-switch">
+
+            Already have an account?
+
+            <a href="login.html">
+                Log in
+            </a>
+
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+    © 2026 Coco · Help. Rescue. Make a Difference.
+</footer>
+
+
+<script type="module">
+
+    import {
+        initializeApp
+    } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+
+
+    import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        updateProfile,
+        signOut,
+        RecaptchaVerifier,
+        signInWithPhoneNumber
+    } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+
+
+    /* =====================================================
+       FIREBASE CONFIG
+    ===================================================== */
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCwo17fsEu4wbPoqj8PT94zvdelAT4GRhQ",
+        authDomain: "coco-be2df.firebaseapp.com",
+        projectId: "coco-be2df",
+        storageBucket: "coco-be2df.firebasestorage.app",
+        messagingSenderId: "558698026766",
+        appId: "1:558698026766:web:91a440af23e105ace3a95f"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+
+    const auth = getAuth(app);
+
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const emailTab =
+        document.getElementById("emailTab");
+
+    const phoneTab =
+        document.getElementById("phoneTab");
+
+    const emailSignupForm =
+        document.getElementById("emailSignupForm");
+
+    const phoneSignupForm =
+        document.getElementById("phoneSignupForm");
+
+    const message =
+        document.getElementById("message");
+
+
+    /* =====================================================
+       TABS
+    ===================================================== */
+
+    emailTab.addEventListener("click", () => {
+
+        emailTab.classList.add("active");
+
+        phoneTab.classList.remove("active");
+
+        emailSignupForm.classList.remove("hidden");
+
+        phoneSignupForm.classList.add("hidden");
+
+        clearMessage();
+
+    });
+
+
+    phoneTab.addEventListener("click", () => {
+
+        phoneTab.classList.add("active");
+
+        emailTab.classList.remove("active");
+
+        phoneSignupForm.classList.remove("hidden");
+
+        emailSignupForm.classList.add("hidden");
+
+        clearMessage();
+
+        setupRecaptcha();
+
+    });
+
+
+    /* =====================================================
+       PASSWORD VISIBILITY
+    ===================================================== */
+
+    document
+        .querySelectorAll(".show-password")
+        .forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const input =
+                    document.getElementById(
+                        button.dataset.target
+                    );
+
+                if (input.type === "password") {
+
+                    input.type = "text";
+
+                    button.textContent = "Hide";
+
+                } else {
+
+                    input.type = "password";
+
+                    button.textContent = "Show";
+
+                }
+
+            });
+
+        });
+
+
+    /* =====================================================
+       MESSAGE
+    ===================================================== */
+
+    function showMessage(text, type) {
+
+        message.textContent = text;
+
+        message.className =
+            "message show " + type;
+
+    }
+
+
+    function clearMessage() {
+
+        message.textContent = "";
+
+        message.className = "message";
+
+    }
+
+
+    /* =====================================================
+       VALIDATION
+    ===================================================== */
+
+    function isValidEmail(value) {
+
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+    }
+
+
+    function isValidPhone(value) {
+
+        return /^[6-9]\d{9}$/.test(value);
+
+    }
+
+
+    function showError(input, errorId) {
+
+        input.classList.add("error");
+
+        document
+            .getElementById(errorId)
+            .classList.add("show");
+
+    }
+
+
+    function clearError(input, errorId) {
+
+        input.classList.remove("error");
+
+        document
+            .getElementById(errorId)
+            .classList.remove("show");
+
+    }
+
+
+    /* =====================================================
+       EMAIL SIGNUP
+    ===================================================== */
+
+    emailSignupForm.addEventListener(
+        "submit",
+        async event => {
+
+            event.preventDefault();
+
+            clearMessage();
+
+            let valid = true;
+
+
+            const firstName =
+                document.getElementById("firstName");
+
+            const lastName =
+                document.getElementById("lastName");
+
+            const email =
+                document.getElementById("email");
+
+            const password =
+                document.getElementById("password");
+
+            const confirmPassword =
+                document.getElementById("confirmPassword");
+
+            const terms =
+                document.getElementById("terms");
+
+            const button =
+                document.getElementById("emailSignupButton");
+
+
+            if (firstName.value.trim().length < 2) {
+
+                showError(
+                    firstName,
+                    "firstNameError"
+                );
+
+                valid = false;
+
+            }
+
+
+            if (lastName.value.trim().length < 2) {
+
+                showError(
+                    lastName,
+                    "lastNameError"
+                );
+
+                valid = false;
+
+            }
+
+
+            if (!isValidEmail(email.value.trim())) {
+
+                showError(
+                    email,
+                    "emailError"
+                );
+
+                valid = false;
+
+            }
+
+
+            if (password.value.length < 6) {
+
+                showError(
+                    password,
+                    "passwordError"
+                );
+
+                valid = false;
+
+            }
+
+
+            if (
+                password.value !==
+                confirmPassword.value
+            ) {
+
+                showError(
+                    confirmPassword,
+                    "confirmPasswordError"
+                );
+
+                valid = false;
+
+            }
+
+
+            if (!terms.checked) {
+
+                document
+                    .getElementById("termsContainer")
+                    .classList.add("error-text");
+
+                valid = false;
+
+            }
+
+
+            if (!valid) return;
+
+
+            button.disabled = true;
+
+            button.textContent =
+                "Creating account...";
+
+
+            try {
+
+                const credential =
+                    await createUserWithEmailAndPassword(
+                        auth,
+                        email.value.trim(),
+                        password.value
+                    );
+
+
+                const user =
+                    credential.user;
+
+
+                const fullName =
+                    `${firstName.value.trim()} ${lastName.value.trim()}`;
+
+
+                await updateProfile(user, {
+
+                    displayName: fullName
+
+                });
+
+
+                /*
+                 * Firebase automatically logs the user in
+                 * after account creation.
+                 *
+                 * We explicitly sign them out because
+                 * Coco requires:
+                 *
+                 * SIGNUP → LOGIN → HOME
+                 */
+
+                await signOut(auth);
+
+
+                showMessage(
+                    "Account created successfully! Please log in.",
+                    "success"
+                );
+
+
+                setTimeout(() => {
+
+                    window.location.href =
+                        "login.html";
+
+                }, 1000);
+
+
+            } catch (error) {
+
+                console.error(
+                    "Firebase email signup error:",
+                    error
+                );
+
+
+                let text =
+                    "Unable to create your account.";
+
+
+                switch (error.code) {
+
+                    case "auth/email-already-in-use":
+
+                        text =
+                            "An account with this email already exists. Please log in.";
+
+                        break;
+
+
+                    case "auth/invalid-email":
+
+                        text =
+                            "Please enter a valid email address.";
+
+                        break;
+
+
+                    case "auth/weak-password":
+
+                        text =
+                            "Your password is too weak.";
+
+                        break;
+
+
+                    case "auth/api-key-not-valid":
+
+                        text =
+                            "Firebase API key is invalid. Check your Firebase configuration.";
+
+                        break;
+
+
+                    case "auth/network-request-failed":
+
+                        text =
+                            "Network error. Check your internet connection.";
+
+                        break;
+
+                }
+
+
+                showMessage(text, "error");
+
+
+                button.disabled = false;
+
+                button.textContent =
+                    "Create Coco account";
+
+            }
 
         }
+    );
 
 
-        /* =========================
-           CLEAR ERROR
-        ========================= */
+    /* =====================================================
+       PHONE OTP
+    ===================================================== */
 
-        function clearError(input, errorElement) {
+    let recaptchaVerifier = null;
 
-            input.classList.remove("error");
-
-            errorElement.classList.remove("show");
-
-        }
+    let confirmationResult = null;
 
 
-        /* =========================
-           INPUT LISTENERS
-        ========================= */
+    function setupRecaptcha() {
 
-        firstName.addEventListener("input", function () {
+        if (recaptchaVerifier) return;
 
-            clearError(
-                firstName,
-                firstNameError
+
+        recaptchaVerifier =
+            new RecaptchaVerifier(
+                auth,
+                "recaptcha-container",
+                {
+                    size: "normal"
+                }
             );
 
-        });
 
+        recaptchaVerifier.render()
+            .catch(error => {
 
-        lastName.addEventListener("input", function () {
+                console.error(
+                    "reCAPTCHA error:",
+                    error
+                );
 
-            clearError(
-                lastName,
-                lastNameError
-            );
+            });
 
-        });
+    }
 
 
-        email.addEventListener("input", function () {
+    /* =====================================================
+       SEND OTP
+    ===================================================== */
 
-            clearError(
-                email,
-                emailError
-            );
+    document
+        .getElementById("sendOtpButton")
+        .addEventListener(
+            "click",
+            async () => {
 
-        });
+                clearMessage();
 
 
-        password.addEventListener("input", function () {
+                const phone =
+                    document.getElementById("phoneNumber");
 
-            clearError(
-                password,
-                passwordError
-            );
+                const button =
+                    document.getElementById("sendOtpButton");
 
-            clearError(
-                confirmPassword,
-                confirmPasswordError
-            );
 
-        });
+                clearError(
+                    phone,
+                    "phoneError"
+                );
 
 
-        confirmPassword.addEventListener("input", function () {
+                const phoneValue =
+                    phone.value.trim();
 
-            clearError(
-                confirmPassword,
-                confirmPasswordError
-            );
 
-        });
+                if (!isValidPhone(phoneValue)) {
 
-
-        terms.addEventListener("change", function () {
-
-            termsContainer.classList.remove("error-text");
-
-        });
-
-
-        /* =========================
-           FORM SUBMIT
-        ========================= */
-
-        signupForm.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-
-                let isValid = true;
-
-
-                /* -------------------------
-                   FIRST NAME
-                ------------------------- */
-
-                if (
-                    firstName.value.trim().length < 2
-                ) {
-
-                    firstName.classList.add("error");
-
-                    firstNameError.classList.add("show");
-
-                    isValid = false;
-
-                }
-
-
-                /* -------------------------
-                   LAST NAME
-                ------------------------- */
-
-                if (
-                    lastName.value.trim().length < 2
-                ) {
-
-                    lastName.classList.add("error");
-
-                    lastNameError.classList.add("show");
-
-                    isValid = false;
-
-                }
-
-
-                /* -------------------------
-                   EMAIL
-                ------------------------- */
-
-                if (
-                    !isValidEmail(
-                        email.value.trim()
-                    )
-                ) {
-
-                    email.classList.add("error");
-
-                    emailError.classList.add("show");
-
-                    isValid = false;
-
-                }
-
-
-                /* -------------------------
-                   PASSWORD
-                ------------------------- */
-
-                if (
-                    password.value.length < 6
-                ) {
-
-                    password.classList.add("error");
-
-                    passwordError.classList.add("show");
-
-                    isValid = false;
-
-                }
-
-
-                /* -------------------------
-                   CONFIRM PASSWORD
-                ------------------------- */
-
-                if (
-                    password.value !==
-                    confirmPassword.value
-                    ||
-                    confirmPassword.value === ""
-                ) {
-
-                    confirmPassword.classList.add("error");
-
-                    confirmPasswordError.classList.add("show");
-
-                    isValid = false;
-
-                }
-
-
-                /* -------------------------
-                   TERMS
-                ------------------------- */
-
-                if (!terms.checked) {
-
-                    termsContainer.classList.add("error-text");
-
-                    isValid = false;
-
-                }
-
-
-                /* -------------------------
-                   STOP IF INVALID
-                ------------------------- */
-
-                if (!isValid) {
+                    showError(
+                        phone,
+                        "phoneError"
+                    );
 
                     return;
 
                 }
 
 
-                /* -------------------------
-                   FRONTEND DEMO
-                ------------------------- */
-
-                signupButton.disabled = true;
-
-                signupButton.textContent =
-                    "Creating account...";
+                setupRecaptcha();
 
 
-                setTimeout(function () {
+                button.disabled = true;
 
-                    signupButton.disabled = false;
+                button.textContent =
+                    "Sending...";
 
-                    signupButton.textContent =
-                        "Create Coco account";
 
-                    successMessage.classList.add("show");
+                try {
 
-                    signupForm.reset();
+                    const formattedPhone =
+                        "+91" + phoneValue;
 
-                }, 900);
+
+                    confirmationResult =
+                        await signInWithPhoneNumber(
+                            auth,
+                            formattedPhone,
+                            recaptchaVerifier
+                        );
+
+
+                    showMessage(
+                        "OTP sent successfully. Check your phone.",
+                        "success"
+                    );
+
+
+                    button.textContent =
+                        "OTP Sent";
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Firebase phone signup error:",
+                        error
+                    );
+
+
+                    console.error(
+                        "ERROR CODE:",
+                        error.code
+                    );
+
+
+                    let text =
+                        "Unable to send OTP.";
+
+
+                    switch (error.code) {
+
+                        case "auth/invalid-phone-number":
+
+                            text =
+                                "Please enter a valid phone number.";
+
+                            break;
+
+
+                        case "auth/too-many-requests":
+
+                            text =
+                                "Too many requests. Please try again later.";
+
+                            break;
+
+
+                        case "auth/quota-exceeded":
+
+                            text =
+                                "SMS quota exceeded. Try again later.";
+
+                            break;
+
+
+                        case "auth/captcha-check-failed":
+
+                            text =
+                                "reCAPTCHA verification failed. Please try again.";
+
+                            break;
+
+
+                        case "auth/network-request-failed":
+
+                            text =
+                                "Network error. Check your internet connection.";
+
+                            break;
+
+                    }
+
+
+                    showMessage(
+                        text,
+                        "error"
+                    );
+
+
+                    button.disabled = false;
+
+                    button.textContent =
+                        "Send OTP";
+
+                }
 
             }
         );
 
 
-    </script>
+    /* =====================================================
+       VERIFY PHONE OTP
+    ===================================================== */
+
+    phoneSignupForm.addEventListener(
+        "submit",
+        async event => {
+
+            event.preventDefault();
+
+            clearMessage();
+
+            let valid = true;
+
+
+            const firstName =
+                document.getElementById("phoneFirstName");
+
+            const lastName =
+                document.getElementById("phoneLastName");
+
+            const phone =
+                document.getElementById("phoneNumber");
+
+            const otp =
+                document.getElementById("otp");
+
+            const terms =
+                document.getElementById("phoneTerms");
+
+            const button =
+                document.getElementById("phoneSignupButton");
+
+
+            if (firstName.value.trim().length < 2) {
+
+                showError(
+                    firstName,
+                    "phoneFirstNameError"
+                );
+
+                valid = false;
+
+            }
+
+
+            if (lastName.value.trim().length < 2) {
+
+                showError(
+                    lastName,
+                    "phoneLastNameError"
+                );
+
+                valid = false;
+
+            }
+
+
+            if (!isValidPhone(phone.value.trim())) {
+
+                showError(
+                    phone,
+                    "phoneError"
+                );
+
+                valid = false;
+
+            }
+
+
+            if (
+                !confirmationResult ||
+                !/^\d{6}$/.test(otp.value.trim())
+            ) {
+
+                showError(
+                    otp,
+                    "otpError"
+                );
+
+                valid = false;
+
+            }
+
+
+            if (!terms.checked) {
+
+                document
+                    .getElementById("phoneTermsContainer")
+                    .classList.add("error-text");
+
+                valid = false;
+
+            }
+
+
+            if (!valid) return;
+
+
+            button.disabled = true;
+
+            button.textContent =
+                "Verifying...";
+
+
+            try {
+
+                const result =
+                    await confirmationResult.confirm(
+                        otp.value.trim()
+                    );
+
+
+                const user =
+                    result.user;
+
+
+                const fullName =
+                    `${firstName.value.trim()} ${lastName.value.trim()}`;
+
+
+                await updateProfile(user, {
+
+                    displayName: fullName
+
+                });
+
+
+                /*
+                 * Force logout so user must visit
+                 * login.html before accessing home.html.
+                 */
+
+                await signOut(auth);
+
+
+                showMessage(
+                    "Phone verified and account created! Please log in.",
+                    "success"
+                );
+
+
+                setTimeout(() => {
+
+                    window.location.href =
+                        "login.html";
+
+                }, 1000);
+
+
+            } catch (error) {
+
+                console.error(
+                    "OTP verification error:",
+                    error
+                );
+
+
+                let text =
+                    "Invalid OTP. Please try again.";
+
+
+                switch (error.code) {
+
+                    case "auth/invalid-verification-code":
+
+                        text =
+                            "The OTP is incorrect.";
+
+                        break;
+
+
+                    case "auth/code-expired":
+
+                        text =
+                            "The OTP has expired. Please request a new one.";
+
+                        break;
+
+
+                    case "auth/account-exists-with-different-credential":
+
+                        text =
+                            "This phone number is already associated with another account.";
+
+                        break;
+
+                }
+
+
+                showMessage(
+                    text,
+                    "error"
+                );
+
+
+                button.disabled = false;
+
+                button.textContent =
+                    "Verify & Create Account";
+
+            }
+
+        }
+    );
+
+</script>
 
 </body>
 </html>
