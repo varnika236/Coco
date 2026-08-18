@@ -1,4 +1,4 @@
- 🐾 Coco — Animal Rescue & Safety App
+# 🐾 Coco — Animal Rescue & Safety App
 
 Coco is a **prototype web application concept for animal rescue and safety**. The project explores how a simple digital platform could encourage people to report animals in need and participate in animal welfare activities.
 
