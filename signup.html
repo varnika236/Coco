@@ -1,46 +1,1312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sign Up | Coco</title>
+
+    <meta
+        name="description"
+        content="Create your Coco account and start making a difference."
+    >
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+
+            font-family: Inter, -apple-system, BlinkMacSystemFont,
+                         "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+            background: #f6faf7;
+
+            color: #17211d;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            height: 76px;
+
+            display: flex;
+            align-items: center;
+
+            background: rgba(255,255,255,0.92);
+
+            border-bottom: 1px solid #e3ebe6;
+
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-container {
+            width: min(1180px, 92%);
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 1.35rem;
+
+            font-weight: 800;
+        }
+
+        .nav-logo {
+            width: 42px;
+            height: 42px;
+
+            object-fit: contain;
+        }
+
+        .login-link {
+            color: #1f7a4d;
+
+            font-size: 0.9rem;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .signup-section {
+            flex: 1;
+
+            width: min(1180px, 92%);
+
+            margin: auto;
+
+            padding: 55px 0;
+
+            display: grid;
+
+            grid-template-columns: 0.85fr 1.15fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .signup-intro {
+            max-width: 470px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 7px 12px;
+
+            border-radius: 999px;
+
+            background: #e7f5ec;
+
+            color: #1f7a4d;
+
+            font-size: 0.78rem;
+
+            font-weight: 800;
+
+            margin-bottom: 22px;
+        }
+
+        .eyebrow-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #35a66b;
+        }
+
+        .signup-intro h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 20px;
+        }
+
+        .signup-intro h1 span {
+            color: #2c9360;
+        }
+
+        .signup-intro > p {
+            color: #68756e;
+
+            font-size: 1.05rem;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           MINI STATS
+        ========================= */
+
+        .impact-list {
+            display: flex;
+            flex-direction: column;
+
+            gap: 14px;
+        }
+
+        .impact-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+        .impact-icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #e7f5ec;
+        }
+
+        .impact-item span {
+            color: #536159;
+
+            font-size: 0.88rem;
+        }
+
+
+        /* =========================
+           SIGNUP CARD
+        ========================= */
+
+        .signup-card {
+            width: min(480px, 100%);
+
+            margin-left: auto;
+
+            padding: 36px;
+
+            background: white;
+
+            border: 1px solid #e0e9e3;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 25px 60px rgba(35,70,52,0.08);
+        }
+
+        .card-logo {
+            display: flex;
+
+            justify-content: center;
+
+            margin-bottom: 17px;
+        }
+
+        .card-logo img {
+            width: 68px;
+            height: 68px;
+
+            object-fit: contain;
+        }
+
+        .card-header {
+            text-align: center;
+
+            margin-bottom: 27px;
+        }
+
+        .card-header h2 {
+            font-size: 1.7rem;
+
+            margin-bottom: 7px;
+        }
+
+        .card-header p {
+            color: #7a857f;
+
+            font-size: 0.88rem;
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #34423b;
+
+            font-size: 0.85rem;
+
+            font-weight: 700;
+        }
+
+        .input {
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #d9e2dc;
+
+            border-radius: 10px;
+
+            background: #fbfdfc;
+
+            color: #17211d;
+
+            outline: none;
+
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .input:focus {
+            border-color: #55a879;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 3px rgba(44,147,96,0.10);
+        }
+
+        .input::placeholder {
+            color: #a0aaa4;
+        }
+
+        /* ERROR */
+
+        .input.error {
+            border-color: #d9534f;
+        }
+
+        .input.error:focus {
+            box-shadow:
+                0 0 0 3px rgba(217,83,79,0.10);
+        }
+
+        .error-message {
+            display: none;
+
+            margin-top: 5px;
+
+            color: #d9534f;
+
+            font-size: 0.74rem;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+
+        /* =========================
+           TERMS
+        ========================= */
+
+        .terms {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 9px;
+
+            margin: 4px 0 22px;
+
+            color: #77827c;
+
+            font-size: 0.78rem;
+
+            line-height: 1.5;
+        }
+
+        .terms input {
+            margin-top: 3px;
+
+            accent-color: #1f7a4d;
+        }
+
+        .terms a {
+            color: #1f7a4d;
+
+            font-weight: 700;
+        }
+
+        .terms.error-text {
+            color: #d9534f;
+        }
+
+
+        /* =========================
+           SIGNUP BUTTON
+        ========================= */
+
+        .signup-button {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 11px;
+
+            background: #1f7a4d;
+
+            color: white;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .signup-button:hover {
+            background: #17643d;
+
+            transform: translateY(-1px);
+        }
+
+        .signup-button:disabled {
+            opacity: 0.7;
+
+            cursor: not-allowed;
+
+            transform: none;
+        }
+
+
+        /* =========================
+           SUCCESS MESSAGE
+        ========================= */
+
+        .success-message {
+            display: none;
+
+            margin-bottom: 18px;
+
+            padding: 11px 13px;
+
+            border-radius: 9px;
+
+            background: #e7f5ec;
+
+            border: 1px solid #cce6d6;
+
+            color: #1f7a4d;
+
+            font-size: 0.8rem;
+
+            line-height: 1.4;
+
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+
+        /* =========================
+           LOGIN LINK
+        ========================= */
+
+        .auth-switch {
+            text-align: center;
+
+            margin-top: 23px;
+
+            color: #758078;
+
+            font-size: 0.88rem;
+        }
+
+        .auth-switch a {
+            color: #1f7a4d;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 20px;
+
+            text-align: center;
+
+            border-top: 1px solid #e4ebe6;
+
+            background: white;
+
+            color: #8a948e;
+
+            font-size: 0.78rem;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .signup-section {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+                padding: 45px 0;
+            }
+
+            .signup-intro {
+                max-width: 650px;
+
+                margin: auto;
+
+                text-align: center;
+            }
+
+            .impact-list {
+                max-width: 430px;
+
+                margin: auto;
+
+                text-align: left;
+            }
+
+            .signup-card {
+                margin: auto;
+            }
+        }
+
+
+        @media (max-width: 550px) {
+
+            .navbar {
+                height: 68px;
+            }
+
+            .signup-section {
+                padding: 35px 0;
+            }
+
+            .signup-intro h1 {
+                font-size: 2.5rem;
+            }
+
+            .signup-card {
+                padding: 27px 22px;
+
+                border-radius: 18px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+
+                gap: 0;
+            }
+        }
+
+    </style>
+
 </head>
-<body class="bg-gray-50 flex items-center justify-center min-h-screen">
 
-  <div class="bg-white shadow-lg rounded-2xl p-10 w-full max-w-md">
-    <h2 class="text-3xl font-bold mb-6 text-center text-gray-800">Create Your Account</h2>
 
-    <form action="#" method="POST" class="space-y-5">
-      <div>
-        <label for="name" class="block mb-1 text-gray-600 font-medium">Full Name</label>
-        <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-      </div>
+<body>
 
-      <div>
-        <label for="email" class="block mb-1 text-gray-600 font-medium">Email Address</label>
-        <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-      </div>
 
-      <div>
-        <label for="password" class="block mb-1 text-gray-600 font-medium">Password</label>
-        <input type="password" id="password" name="password" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-      </div>
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
-      <div>
-        <label for="confirm" class="block mb-1 text-gray-600 font-medium">Confirm Password</label>
-        <input type="password" id="confirm" name="confirm" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-      </div>
+    <header class="navbar">
 
-      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold"><a href="login.html">Sign Up</a></button>
-    </form>
+        <div class="nav-container">
 
-    <p class="text-sm text-gray-500 text-center mt-6">
-      Already have an account?
-      <a href="login.html" class="text-blue-600 hover:underline">Log in</a>
-    </p>
-  </div>
+
+            <a href="index.html" class="logo">
+
+                <img
+                    src="coco logo.png"
+                    alt="Coco Logo"
+                    class="nav-logo"
+                >
+
+                <span>COCO</span>
+
+            </a>
+
+
+            <a href="login.html" class="login-link">
+                Already have an account? Log in →
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main class="signup-section">
+
+
+        <!-- LEFT SIDE -->
+
+        <section class="signup-intro">
+
+            <div class="eyebrow">
+
+                <span class="eyebrow-dot"></span>
+
+                Join the Coco community
+
+            </div>
+
+
+            <h1>
+                Turn your
+                <span>concern into action.</span>
+            </h1>
+
+
+            <p>
+                Create your Coco account and get a simple way to
+                report animals in need, contribute to rescues and
+                track your impact.
+            </p>
+
+
+            <div class="impact-list">
+
+
+                <div class="impact-item">
+
+                    <div class="impact-icon">
+                        📸
+                    </div>
+
+                    <span>
+                        Report animals with photos and useful details.
+                    </span>
+
+                </div>
+
+
+
+                <div class="impact-item">
+
+                    <div class="impact-icon">
+                        📍
+                    </div>
+
+                    <span>
+                        Share locations so help can reach the right place.
+                    </span>
+
+                </div>
+
+
+
+                <div class="impact-item">
+
+                    <div class="impact-icon">
+                        🪙
+                    </div>
+
+                    <span>
+                        Earn Coco Coins for meaningful contributions.
+                    </span>
+
+                </div>
+
+
+
+                <div class="impact-item">
+
+                    <div class="impact-icon">
+                        🐾
+                    </div>
+
+                    <span>
+                        Build your contribution history over time.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SIGNUP CARD -->
+
+        <section class="signup-card">
+
+
+            <div class="card-logo">
+
+                <img
+                    src="coco logo.png"
+                    alt="Coco Logo"
+                >
+
+            </div>
+
+
+            <div class="card-header">
+
+                <h2>
+                    Create your account
+                </h2>
+
+                <p>
+                    Start your Coco journey today.
+                </p>
+
+            </div>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <div
+                id="successMessage"
+                class="success-message"
+            >
+                Your details look good. Authentication will be
+                connected when Firebase is added.
+            </div>
+
+
+            <form
+                id="signupForm"
+                novalidate
+            >
+
+
+                <!-- NAME -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label
+                            for="firstName"
+                            class="form-label"
+                        >
+                            First name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            class="input"
+                            placeholder="Varnika"
+                            autocomplete="given-name"
+                            required
+                        >
+
+                        <p
+                            id="firstNameError"
+                            class="error-message"
+                        >
+                            Please enter your first name.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label
+                            for="lastName"
+                            class="form-label"
+                        >
+                            Last name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="lastName"
+                            name="lastName"
+                            class="input"
+                            placeholder="Saini"
+                            autocomplete="family-name"
+                            required
+                        >
+
+                        <p
+                            id="lastNameError"
+                            class="error-message"
+                        >
+                            Please enter your last name.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label
+                        for="email"
+                        class="form-label"
+                    >
+                        Email address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="input"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <p
+                        id="emailError"
+                        class="error-message"
+                    >
+                        Please enter a valid email address.
+                    </p>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label
+                            for="password"
+                            class="form-label"
+                        >
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="input"
+                            placeholder="Create password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <p
+                            id="passwordError"
+                            class="error-message"
+                        >
+                            Password must contain at least 6 characters.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label
+                            for="confirmPassword"
+                            class="form-label"
+                        >
+                            Confirm password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            class="input"
+                            placeholder="Repeat password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <p
+                            id="confirmPasswordError"
+                            class="error-message"
+                        >
+                            Passwords do not match.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TERMS -->
+
+                <label
+                    class="terms"
+                    id="termsContainer"
+                >
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <span>
+
+                        I agree to Coco's
+
+                        <a href="#">
+                            Terms of Service
+                        </a>
+
+                        and
+
+                        <a href="#">
+                            Privacy Policy
+                        </a>.
+
+                    </span>
+
+                </label>
+
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="signup-button"
+                    id="signupButton"
+                >
+                    Create Coco account
+                </button>
+
+            </form>
+
+
+            <p class="auth-switch">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Log in
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+
+        © 2026 Coco · Help. Rescue. Make a Difference.
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =========================
+           GET ELEMENTS
+        ========================= */
+
+        const signupForm =
+            document.getElementById("signupForm");
+
+        const firstName =
+            document.getElementById("firstName");
+
+        const lastName =
+            document.getElementById("lastName");
+
+        const email =
+            document.getElementById("email");
+
+        const password =
+            document.getElementById("password");
+
+        const confirmPassword =
+            document.getElementById("confirmPassword");
+
+        const terms =
+            document.getElementById("terms");
+
+        const termsContainer =
+            document.getElementById("termsContainer");
+
+        const signupButton =
+            document.getElementById("signupButton");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+
+        /* =========================
+           ERROR ELEMENTS
+        ========================= */
+
+        const firstNameError =
+            document.getElementById("firstNameError");
+
+        const lastNameError =
+            document.getElementById("lastNameError");
+
+        const emailError =
+            document.getElementById("emailError");
+
+        const passwordError =
+            document.getElementById("passwordError");
+
+        const confirmPasswordError =
+            document.getElementById("confirmPasswordError");
+
+
+        /* =========================
+           EMAIL VALIDATION
+        ========================= */
+
+        function isValidEmail(value) {
+
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+        }
+
+
+        /* =========================
+           CLEAR ERROR
+        ========================= */
+
+        function clearError(input, errorElement) {
+
+            input.classList.remove("error");
+
+            errorElement.classList.remove("show");
+
+        }
+
+
+        /* =========================
+           INPUT LISTENERS
+        ========================= */
+
+        firstName.addEventListener("input", function () {
+
+            clearError(
+                firstName,
+                firstNameError
+            );
+
+        });
+
+
+        lastName.addEventListener("input", function () {
+
+            clearError(
+                lastName,
+                lastNameError
+            );
+
+        });
+
+
+        email.addEventListener("input", function () {
+
+            clearError(
+                email,
+                emailError
+            );
+
+        });
+
+
+        password.addEventListener("input", function () {
+
+            clearError(
+                password,
+                passwordError
+            );
+
+            clearError(
+                confirmPassword,
+                confirmPasswordError
+            );
+
+        });
+
+
+        confirmPassword.addEventListener("input", function () {
+
+            clearError(
+                confirmPassword,
+                confirmPasswordError
+            );
+
+        });
+
+
+        terms.addEventListener("change", function () {
+
+            termsContainer.classList.remove("error-text");
+
+        });
+
+
+        /* =========================
+           FORM SUBMIT
+        ========================= */
+
+        signupForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                let isValid = true;
+
+
+                /* -------------------------
+                   FIRST NAME
+                ------------------------- */
+
+                if (
+                    firstName.value.trim().length < 2
+                ) {
+
+                    firstName.classList.add("error");
+
+                    firstNameError.classList.add("show");
+
+                    isValid = false;
+
+                }
+
+
+                /* -------------------------
+                   LAST NAME
+                ------------------------- */
+
+                if (
+                    lastName.value.trim().length < 2
+                ) {
+
+                    lastName.classList.add("error");
+
+                    lastNameError.classList.add("show");
+
+                    isValid = false;
+
+                }
+
+
+                /* -------------------------
+                   EMAIL
+                ------------------------- */
+
+                if (
+                    !isValidEmail(
+                        email.value.trim()
+                    )
+                ) {
+
+                    email.classList.add("error");
+
+                    emailError.classList.add("show");
+
+                    isValid = false;
+
+                }
+
+
+                /* -------------------------
+                   PASSWORD
+                ------------------------- */
+
+                if (
+                    password.value.length < 6
+                ) {
+
+                    password.classList.add("error");
+
+                    passwordError.classList.add("show");
+
+                    isValid = false;
+
+                }
+
+
+                /* -------------------------
+                   CONFIRM PASSWORD
+                ------------------------- */
+
+                if (
+                    password.value !==
+                    confirmPassword.value
+                    ||
+                    confirmPassword.value === ""
+                ) {
+
+                    confirmPassword.classList.add("error");
+
+                    confirmPasswordError.classList.add("show");
+
+                    isValid = false;
+
+                }
+
+
+                /* -------------------------
+                   TERMS
+                ------------------------- */
+
+                if (!terms.checked) {
+
+                    termsContainer.classList.add("error-text");
+
+                    isValid = false;
+
+                }
+
+
+                /* -------------------------
+                   STOP IF INVALID
+                ------------------------- */
+
+                if (!isValid) {
+
+                    return;
+
+                }
+
+
+                /* -------------------------
+                   FRONTEND DEMO
+                ------------------------- */
+
+                signupButton.disabled = true;
+
+                signupButton.textContent =
+                    "Creating account...";
+
+
+                setTimeout(function () {
+
+                    signupButton.disabled = false;
+
+                    signupButton.textContent =
+                        "Create Coco account";
+
+                    successMessage.classList.add("show");
+
+                    signupForm.reset();
+
+                }, 900);
+
+            }
+        );
+
+
+    </script>
 
 </body>
 </html>
