@@ -1,80 +1,1109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Coco Emergency App - Login</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Login | Coco</title>
+
+    <meta
+        name="description"
+        content="Log in to Coco and continue making a difference for animals in need."
+    >
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+
+            font-family: Inter, -apple-system, BlinkMacSystemFont,
+                         "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+            background: #f6faf7;
+            color: #17211d;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            height: 76px;
+
+            display: flex;
+            align-items: center;
+
+            border-bottom: 1px solid #e3ebe6;
+
+            background: rgba(255, 255, 255, 0.92);
+
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-container {
+            width: min(1180px, 92%);
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo {
+            width: 42px;
+            height: 42px;
+
+            object-fit: contain;
+        }
+
+        .back-home {
+            color: #5e6b64;
+            font-size: 0.92rem;
+            font-weight: 600;
+
+            transition: color 0.2s ease;
+        }
+
+        .back-home:hover {
+            color: #1f7a4d;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .auth-section {
+            flex: 1;
+
+            width: min(1180px, 92%);
+            margin: auto;
+
+            padding: 60px 0;
+
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+
+            align-items: center;
+
+            gap: 80px;
+        }
+
+
+        /* =========================
+           LEFT INFORMATION
+        ========================= */
+
+        .auth-intro {
+            max-width: 480px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 7px 12px;
+
+            border-radius: 999px;
+
+            background: #e7f5ec;
+            color: #1f7a4d;
+
+            font-size: 0.78rem;
+            font-weight: 800;
+
+            margin-bottom: 22px;
+        }
+
+        .eyebrow-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #35a66b;
+        }
+
+        .auth-intro h1 {
+            font-size: clamp(2.4rem, 5vw, 4rem);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 20px;
+        }
+
+        .auth-intro h1 span {
+            color: #2c9360;
+        }
+
+        .auth-intro > p {
+            color: #68756e;
+
+            font-size: 1.05rem;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           BENEFITS
+        ========================= */
+
+        .benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+        }
+
+        .benefit-icon {
+            width: 36px;
+            height: 36px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #e6f4eb;
+
+            font-size: 16px;
+        }
+
+        .benefit h3 {
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+
+        .benefit p {
+            color: #7a857f;
+            font-size: 0.83rem;
+        }
+
+
+        /* =========================
+           AUTH CARD
+        ========================= */
+
+        .auth-card {
+            width: min(460px, 100%);
+
+            margin-left: auto;
+
+            padding: 38px;
+
+            background: white;
+
+            border: 1px solid #e0e9e3;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 25px 60px rgba(35, 70, 52, 0.08);
+        }
+
+        .card-logo {
+            display: flex;
+            justify-content: center;
+
+            margin-bottom: 20px;
+        }
+
+        .card-logo img {
+            width: 72px;
+            height: 72px;
+
+            object-fit: contain;
+        }
+
+        .auth-card-header {
+            text-align: center;
+
+            margin-bottom: 30px;
+        }
+
+        .auth-card-header h2 {
+            font-size: 1.7rem;
+
+            margin-bottom: 7px;
+        }
+
+        .auth-card-header p {
+            color: #7a857f;
+
+            font-size: 0.9rem;
+        }
+
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #34423b;
+
+            font-size: 0.87rem;
+            font-weight: 700;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input {
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border: 1px solid #d9e2dc;
+
+            border-radius: 10px;
+
+            background: #fbfdfc;
+
+            color: #17211d;
+
+            outline: none;
+
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .input:focus {
+            border-color: #55a879;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 3px rgba(44, 147, 96, 0.10);
+        }
+
+        .input::placeholder {
+            color: #a0aaa4;
+        }
+
+        /* ERROR STATE */
+
+        .input.error {
+            border-color: #d9534f;
+        }
+
+        .input.error:focus {
+            box-shadow:
+                0 0 0 3px rgba(217, 83, 79, 0.10);
+        }
+
+        .error-message {
+            display: none;
+
+            margin-top: 6px;
+
+            color: #d9534f;
+
+            font-size: 0.76rem;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+
+        /* =========================
+           FORM OPTIONS
+        ========================= */
+
+        .form-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin: 5px 0 24px;
+
+            font-size: 0.82rem;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+
+            color: #68756e;
+        }
+
+        .remember input {
+            accent-color: #1f7a4d;
+        }
+
+        .forgot {
+            color: #1f7a4d;
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           LOGIN BUTTON
+        ========================= */
+
+        .login-button {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+            border-radius: 11px;
+
+            background: #1f7a4d;
+            color: white;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .login-button:hover {
+            background: #17643d;
+
+            transform: translateY(-1px);
+        }
+
+        .login-button:disabled {
+            opacity: 0.7;
+
+            cursor: not-allowed;
+
+            transform: none;
+        }
+
+
+        /* =========================
+           DIVIDER
+        ========================= */
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin: 25px 0;
+
+            color: #a0aaa4;
+
+            font-size: 0.78rem;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+
+            height: 1px;
+
+            flex: 1;
+
+            background: #e5ebe7;
+        }
+
+
+        /* =========================
+           SIGNUP LINK
+        ========================= */
+
+        .auth-switch {
+            text-align: center;
+
+            color: #758078;
+
+            font-size: 0.88rem;
+        }
+
+        .auth-switch a {
+            color: #1f7a4d;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================
+           SUCCESS MESSAGE
+        ========================= */
+
+        .success-message {
+            display: none;
+
+            margin-top: 15px;
+            padding: 11px 13px;
+
+            border-radius: 9px;
+
+            background: #e7f5ec;
+
+            border: 1px solid #cce6d6;
+
+            color: #1f7a4d;
+
+            font-size: 0.8rem;
+
+            text-align: center;
+
+            line-height: 1.4;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 20px;
+
+            text-align: center;
+
+            border-top: 1px solid #e4ebe6;
+
+            background: white;
+
+            color: #8a948e;
+
+            font-size: 0.78rem;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .auth-section {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+                padding: 50px 0;
+            }
+
+            .auth-intro {
+                max-width: 650px;
+                margin: auto;
+
+                text-align: center;
+            }
+
+            .benefits {
+                max-width: 500px;
+
+                margin: auto;
+
+                text-align: left;
+            }
+
+            .auth-card {
+                margin: auto;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .navbar {
+                height: 68px;
+            }
+
+            .back-home {
+                display: none;
+            }
+
+            .auth-section {
+                padding: 40px 0;
+            }
+
+            .auth-intro h1 {
+                font-size: 2.5rem;
+            }
+
+            .auth-card {
+                padding: 27px 22px;
+
+                border-radius: 18px;
+            }
+
+            .form-options {
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 10px;
+            }
+        }
+
+    </style>
 </head>
+
+
 <body>
-  <div class="login-container">
-    <div class="login-card">
-      <h2>Coco Emergency App</h2>
-      <form class="login-form" onsubmit="handleLogin(event)">
-        <input type="text" name="Name" placeholder="Name" required />
-        <input type="tel" name="mobile" placeholder="Mobile Number" pattern="[0-9]{10}" required />
-        <input type="email" name="email" placeholder="Email ID" required />
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold"><a href="description.html">Login</a></button>
-        <div class="spinner" id="spinner"></div>
-        <p class="message" id="message"></p>
-      </form>
-    </div>
-  </div>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+
+                <img
+                    src="coco logo.png"
+                    alt="Coco Logo"
+                    class="nav-logo"
+                >
+
+                <span>COCO</span>
+
+            </a>
+
+
+            <a href="index.html" class="back-home">
+                ← Back to home
+            </a>
+
+        </div>
+
+    </header>
 
 
 
-  <script>
-    // Firebase config (replace with your own)
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "YOUR_SENDER_ID",
-      appId: "YOUR_APP_ID"
-    };
+    <!-- =========================
+         MAIN AUTH SECTION
+    ========================== -->
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const database = firebase.database();
+    <main class="auth-section">
 
-    function handleLogin(event) {
-      event.preventDefault();
-      const form = event.target;
-      const state = form.state.value.trim();
-      const mobile = form.mobile.value.trim();
-      const email = form.email.value.trim();
-      const message = document.getElementById("message");
-      const spinner = document.getElementById("spinner");
-      const submitBtn = document.getElementById("submitBtn");
 
-      message.textContent = "";
-      spinner.style.display = "block";
-      submitBtn.disabled = true;
+        <!-- LEFT SIDE -->
 
-      firebase.database().ref("logins").push({
-        state,
-        mobile,
-        email,
-        timestamp: new Date().toISOString()
-      })
-      .then(() => {
-        message.textContent = "Login submitted successfully!";
-        message.style.color = "green";
-        form.reset();
-      })
-      .catch((error) => {
-        message.textContent = "Error: " + error.message;
-        message.style.color = "red";
-      })
-      .finally(() => {
-        spinner.style.display = "none";
-        submitBtn.disabled = false;
-      });
-    }
-  </script>
+        <section class="auth-intro">
+
+            <div class="eyebrow">
+
+                <span class="eyebrow-dot"></span>
+
+                Welcome back to Coco
+
+            </div>
+
+
+            <h1>
+                Continue your
+                <span>rescue journey.</span>
+            </h1>
+
+
+            <p>
+                Log in to report animals, track your contributions,
+                earn Coco Coins and stay connected with the community.
+            </p>
+
+
+            <div class="benefits">
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Report & share locations
+                        </h3>
+
+                        <p>
+                            Help others find animals that need assistance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        🪙
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Build your impact
+                        </h3>
+
+                        <p>
+                            Earn rewards through meaningful contributions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="benefit">
+
+                    <div class="benefit-icon">
+                        🐾
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Be part of the community
+                        </h3>
+
+                        <p>
+                            Every report can help someone take action.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LOGIN CARD -->
+
+        <section class="auth-card">
+
+
+            <div class="card-logo">
+
+                <img
+                    src="coco logo.png"
+                    alt="Coco Logo"
+                >
+
+            </div>
+
+
+            <div class="auth-card-header">
+
+                <h2>
+                    Welcome back 👋
+                </h2>
+
+                <p>
+                    Log in to continue with Coco.
+                </p>
+
+            </div>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <div
+                id="successMessage"
+                class="success-message"
+            >
+                Login details look valid. Authentication
+                will be connected when Firebase is added.
+            </div>
+
+
+            <form id="loginForm" novalidate>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label
+                        for="email"
+                        class="form-label"
+                    >
+                        Email address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="input"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <p
+                        id="emailError"
+                        class="error-message"
+                    >
+                        Please enter a valid email address.
+                    </p>
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label
+                        for="password"
+                        class="form-label"
+                    >
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="input"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <p
+                        id="passwordError"
+                        class="error-message"
+                    >
+                        Password must contain at least 6 characters.
+                    </p>
+
+                </div>
+
+
+
+                <!-- OPTIONS -->
+
+                <div class="form-options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            name="remember"
+                        >
+
+                        Remember me
+
+                    </label>
+
+
+                    <a
+                        href="#"
+                        class="forgot"
+                        id="forgotPassword"
+                    >
+                        Forgot password?
+                    </a>
+
+                </div>
+
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="login-button"
+                    id="loginButton"
+                >
+                    Log in to Coco
+                </button>
+
+
+                <!-- SUCCESS -->
+
+                <div
+                    id="successMessageBottom"
+                    class="success-message"
+                >
+                    Your details passed the basic validation.
+                </div>
+
+            </form>
+
+
+            <div class="divider">
+                OR
+            </div>
+
+
+            <p class="auth-switch">
+
+                Don't have a Coco account?
+
+                <a href="signup.html">
+                    Create an account
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+
+        © 2026 Coco · Help. Rescue. Make a Difference.
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* =========================
+           GET ELEMENTS
+        ========================= */
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const email =
+            document.getElementById("email");
+
+        const password =
+            document.getElementById("password");
+
+        const emailError =
+            document.getElementById("emailError");
+
+        const passwordError =
+            document.getElementById("passwordError");
+
+        const loginButton =
+            document.getElementById("loginButton");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+
+        /* =========================
+           EMAIL VALIDATION
+        ========================= */
+
+        function isValidEmail(value) {
+
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+        }
+
+
+        /* =========================
+           EMAIL INPUT
+        ========================= */
+
+        email.addEventListener("input", function () {
+
+            email.classList.remove("error");
+
+            emailError.classList.remove("show");
+
+        });
+
+
+        /* =========================
+           PASSWORD INPUT
+        ========================= */
+
+        password.addEventListener("input", function () {
+
+            password.classList.remove("error");
+
+            passwordError.classList.remove("show");
+
+        });
+
+
+        /* =========================
+           LOGIN FORM
+        ========================= */
+
+        loginForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+
+            let isValid = true;
+
+
+            /* -------------------------
+               EMAIL
+            ------------------------- */
+
+            const emailValue =
+                email.value.trim();
+
+
+            if (!isValidEmail(emailValue)) {
+
+                email.classList.add("error");
+
+                emailError.classList.add("show");
+
+                isValid = false;
+
+            }
+
+
+            /* -------------------------
+               PASSWORD
+            ------------------------- */
+
+            if (password.value.length < 6) {
+
+                password.classList.add("error");
+
+                passwordError.classList.add("show");
+
+                isValid = false;
+
+            }
+
+
+            /* -------------------------
+               STOP IF INVALID
+            ------------------------- */
+
+            if (!isValid) {
+
+                return;
+
+            }
+
+
+            /* -------------------------
+               FRONTEND DEMO
+            ------------------------- */
+
+            loginButton.disabled = true;
+
+            loginButton.textContent =
+                "Checking...";
+
+
+            setTimeout(function () {
+
+                loginButton.disabled = false;
+
+                loginButton.textContent =
+                    "Log in to Coco";
+
+                successMessage.classList.add("show");
+
+            }, 800);
+
+        });
+
+
+        /* =========================
+           FORGOT PASSWORD
+        ========================= */
+
+        const forgotPassword =
+            document.getElementById("forgotPassword");
+
+
+        forgotPassword.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                alert(
+                    "Password recovery will be connected when Coco authentication is added."
+                );
+
+            }
+        );
+
+
+    </script>
+
 </body>
 </html>
-
