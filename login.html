@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Login | Coco</title>
 
@@ -13,18 +18,10 @@
 
     <style>
 
-        /* =========================
-           RESET
-        ========================= */
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
@@ -34,6 +31,7 @@
                          "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
             background: #f6faf7;
+
             color: #17211d;
 
             display: flex;
@@ -50,11 +48,6 @@
             font: inherit;
         }
 
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
         .navbar {
             height: 76px;
 
@@ -63,32 +56,38 @@
 
             border-bottom: 1px solid #e3ebe6;
 
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255,255,255,0.92);
 
             backdrop-filter: blur(12px);
         }
 
         .nav-container {
             width: min(1180px, 92%);
+
             margin: auto;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
         }
 
         .logo {
             display: flex;
+
             align-items: center;
+
             gap: 10px;
 
             font-size: 1.35rem;
+
             font-weight: 800;
-            letter-spacing: -0.5px;
         }
 
         .nav-logo {
             width: 42px;
+
             height: 42px;
 
             object-fit: contain;
@@ -96,30 +95,27 @@
 
         .back-home {
             color: #5e6b64;
-            font-size: 0.92rem;
-            font-weight: 600;
 
-            transition: color 0.2s ease;
+            font-size: 0.92rem;
+
+            font-weight: 600;
         }
 
         .back-home:hover {
             color: #1f7a4d;
         }
 
-
-        /* =========================
-           MAIN
-        ========================= */
-
         .auth-section {
             flex: 1;
 
             width: min(1180px, 92%);
+
             margin: auto;
 
             padding: 60px 0;
 
             display: grid;
+
             grid-template-columns: 0.9fr 1.1fr;
 
             align-items: center;
@@ -127,18 +123,15 @@
             gap: 80px;
         }
 
-
-        /* =========================
-           LEFT INFORMATION
-        ========================= */
-
         .auth-intro {
             max-width: 480px;
         }
 
         .eyebrow {
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
 
             padding: 7px 12px;
@@ -146,9 +139,11 @@
             border-radius: 999px;
 
             background: #e7f5ec;
+
             color: #1f7a4d;
 
             font-size: 0.78rem;
+
             font-weight: 800;
 
             margin-bottom: 22px;
@@ -156,6 +151,7 @@
 
         .eyebrow-dot {
             width: 7px;
+
             height: 7px;
 
             border-radius: 50%;
@@ -185,54 +181,51 @@
             margin-bottom: 30px;
         }
 
-
-        /* =========================
-           BENEFITS
-        ========================= */
-
         .benefits {
             display: flex;
+
             flex-direction: column;
+
             gap: 15px;
         }
 
         .benefit {
             display: flex;
+
             align-items: flex-start;
+
             gap: 13px;
         }
 
         .benefit-icon {
             width: 36px;
+
             height: 36px;
 
             flex-shrink: 0;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             border-radius: 10px;
 
             background: #e6f4eb;
-
-            font-size: 16px;
         }
 
         .benefit h3 {
             font-size: 0.95rem;
+
             margin-bottom: 2px;
         }
 
         .benefit p {
             color: #7a857f;
+
             font-size: 0.83rem;
         }
-
-
-        /* =========================
-           AUTH CARD
-        ========================= */
 
         .auth-card {
             width: min(460px, 100%);
@@ -248,11 +241,12 @@
             border-radius: 22px;
 
             box-shadow:
-                0 25px 60px rgba(35, 70, 52, 0.08);
+                0 25px 60px rgba(35,70,52,0.08);
         }
 
         .card-logo {
             display: flex;
+
             justify-content: center;
 
             margin-bottom: 20px;
@@ -260,6 +254,7 @@
 
         .card-logo img {
             width: 72px;
+
             height: 72px;
 
             object-fit: contain;
@@ -268,7 +263,7 @@
         .auth-card-header {
             text-align: center;
 
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .auth-card-header h2 {
@@ -283,10 +278,54 @@
             font-size: 0.9rem;
         }
 
+        /* AUTH TABS */
 
-        /* =========================
-           FORM
-        ========================= */
+        .auth-tabs {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 6px;
+
+            padding: 5px;
+
+            background: #f0f5f2;
+
+            border-radius: 12px;
+
+            margin-bottom: 25px;
+        }
+
+        .auth-tab {
+            border: none;
+
+            background: transparent;
+
+            padding: 10px;
+
+            border-radius: 8px;
+
+            color: #68756e;
+
+            font-size: 0.82rem;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+        .auth-tab.active {
+            background: white;
+
+            color: #1f7a4d;
+
+            box-shadow:
+                0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .hidden {
+            display: none !important;
+        }
 
         .form-group {
             margin-bottom: 20px;
@@ -300,6 +339,7 @@
             color: #34423b;
 
             font-size: 0.87rem;
+
             font-weight: 700;
         }
 
@@ -324,8 +364,11 @@
 
             transition:
                 border-color 0.2s ease,
-                box-shadow 0.2s ease,
-                background 0.2s ease;
+                box-shadow 0.2s ease;
+        }
+
+        .password-input {
+            padding-right: 70px;
         }
 
         .input:focus {
@@ -334,22 +377,37 @@
             background: white;
 
             box-shadow:
-                0 0 0 3px rgba(44, 147, 96, 0.10);
+                0 0 0 3px rgba(44,147,96,0.10);
         }
 
         .input::placeholder {
             color: #a0aaa4;
         }
 
-        /* ERROR STATE */
-
         .input.error {
             border-color: #d9534f;
         }
 
-        .input.error:focus {
-            box-shadow:
-                0 0 0 3px rgba(217, 83, 79, 0.10);
+        .show-password {
+            position: absolute;
+
+            right: 12px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border: none;
+
+            background: transparent;
+
+            color: #1f7a4d;
+
+            font-size: 0.76rem;
+
+            font-weight: 700;
+
+            cursor: pointer;
         }
 
         .error-message {
@@ -366,14 +424,11 @@
             display: block;
         }
 
-
-        /* =========================
-           FORM OPTIONS
-        ========================= */
-
         .form-options {
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
             margin: 5px 0 24px;
@@ -383,7 +438,9 @@
 
         .remember {
             display: flex;
+
             align-items: center;
+
             gap: 7px;
 
             color: #68756e;
@@ -395,13 +452,11 @@
 
         .forgot {
             color: #1f7a4d;
+
             font-weight: 700;
+
+            cursor: pointer;
         }
-
-
-        /* =========================
-           LOGIN BUTTON
-        ========================= */
 
         .login-button {
             width: 100%;
@@ -409,42 +464,131 @@
             padding: 14px;
 
             border: none;
+
             border-radius: 11px;
 
             background: #1f7a4d;
+
             color: white;
 
             font-weight: 800;
 
             cursor: pointer;
-
-            transition:
-                background 0.2s ease,
-                transform 0.2s ease;
         }
 
         .login-button:hover {
             background: #17643d;
-
-            transform: translateY(-1px);
         }
 
         .login-button:disabled {
             opacity: 0.7;
 
             cursor: not-allowed;
-
-            transform: none;
         }
 
+        .message {
+            display: none;
 
-        /* =========================
-           DIVIDER
-        ========================= */
+            margin-bottom: 18px;
+
+            padding: 11px 13px;
+
+            border-radius: 9px;
+
+            font-size: 0.8rem;
+
+            line-height: 1.4;
+
+            text-align: center;
+        }
+
+        .message.show {
+            display: block;
+        }
+
+        .message.success {
+            background: #e7f5ec;
+
+            border: 1px solid #cce6d6;
+
+            color: #1f7a4d;
+        }
+
+        .message.error {
+            background: #fff0ef;
+
+            border: 1px solid #f1c9c6;
+
+            color: #c53f3a;
+        }
+
+        .phone-row {
+            display: grid;
+
+            grid-template-columns: 90px 1fr;
+
+            gap: 8px;
+        }
+
+        .country-code {
+            padding: 13px 8px;
+
+            border: 1px solid #d9e2dc;
+
+            border-radius: 10px;
+
+            background: #fbfdfc;
+
+            text-align: center;
+
+            font-weight: 700;
+
+            color: #34423b;
+        }
+
+        .otp-row {
+            display: grid;
+
+            grid-template-columns: 1fr 110px;
+
+            gap: 8px;
+        }
+
+        .send-otp-button {
+            border: none;
+
+            border-radius: 10px;
+
+            background: #e7f5ec;
+
+            color: #1f7a4d;
+
+            font-size: 0.78rem;
+
+            font-weight: 800;
+
+            cursor: pointer;
+        }
+
+        .send-otp-button:disabled {
+            opacity: 0.6;
+
+            cursor: not-allowed;
+        }
+
+        #recaptcha-container {
+            margin: 12px 0 18px;
+
+            display: flex;
+
+            justify-content: center;
+        }
 
         .divider {
             display: flex;
+
             align-items: center;
+
             gap: 12px;
 
             margin: 25px 0;
@@ -465,11 +609,6 @@
             background: #e5ebe7;
         }
 
-
-        /* =========================
-           SIGNUP LINK
-        ========================= */
-
         .auth-switch {
             text-align: center;
 
@@ -483,41 +622,6 @@
 
             font-weight: 800;
         }
-
-
-        /* =========================
-           SUCCESS MESSAGE
-        ========================= */
-
-        .success-message {
-            display: none;
-
-            margin-top: 15px;
-            padding: 11px 13px;
-
-            border-radius: 9px;
-
-            background: #e7f5ec;
-
-            border: 1px solid #cce6d6;
-
-            color: #1f7a4d;
-
-            font-size: 0.8rem;
-
-            text-align: center;
-
-            line-height: 1.4;
-        }
-
-        .success-message.show {
-            display: block;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
 
         footer {
             padding: 20px;
@@ -533,11 +637,6 @@
             font-size: 0.78rem;
         }
 
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
         @media (max-width: 850px) {
 
             .auth-section {
@@ -550,6 +649,7 @@
 
             .auth-intro {
                 max-width: 650px;
+
                 margin: auto;
 
                 text-align: center;
@@ -567,7 +667,6 @@
                 margin: auto;
             }
         }
-
 
         @media (max-width: 500px) {
 
@@ -600,510 +699,1235 @@
 
                 gap: 10px;
             }
+
+            .phone-row {
+                grid-template-columns: 75px 1fr;
+            }
+
+            .otp-row {
+                grid-template-columns: 1fr;
+            }
+
+            .send-otp-button {
+                padding: 11px;
+            }
         }
 
     </style>
+
 </head>
 
 
 <body>
 
+<header class="navbar">
 
-    <!-- =========================
-         NAVBAR
-    ========================== -->
+    <div class="nav-container">
 
-    <header class="navbar">
+        <a href="index.html" class="logo">
 
-        <div class="nav-container">
+            <img
+                src="coco logo.png"
+                alt="Coco Logo"
+                class="nav-logo"
+            >
 
-            <a href="index.html" class="logo">
+            <span>COCO</span>
 
-                <img
-                    src="coco logo.png"
-                    alt="Coco Logo"
-                    class="nav-logo"
-                >
+        </a>
 
-                <span>COCO</span>
+        <a
+            href="index.html"
+            class="back-home"
+        >
+            ← Back to home
+        </a>
 
-            </a>
+    </div>
+
+</header>
 
 
-            <a href="index.html" class="back-home">
-                ← Back to home
-            </a>
+<main class="auth-section">
+
+    <section class="auth-intro">
+
+        <div class="eyebrow">
+
+            <span class="eyebrow-dot"></span>
+
+            Welcome back to Coco
 
         </div>
 
-    </header>
+
+        <h1>
+
+            Continue your
+
+            <span>rescue journey.</span>
+
+        </h1>
 
 
+        <p>
 
-    <!-- =========================
-         MAIN AUTH SECTION
-    ========================== -->
+            Log in to report animals, track your contributions,
+            earn Coco Coins and stay connected with the community.
 
-    <main class="auth-section">
+        </p>
 
 
-        <!-- LEFT SIDE -->
+        <div class="benefits">
 
-        <section class="auth-intro">
+            <div class="benefit">
 
-            <div class="eyebrow">
+                <div class="benefit-icon">
+                    📍
+                </div>
 
-                <span class="eyebrow-dot"></span>
+                <div>
 
-                Welcome back to Coco
+                    <h3>
+                        Report & share locations
+                    </h3>
+
+                    <p>
+                        Help others find animals that need assistance.
+                    </p>
+
+                </div>
 
             </div>
 
 
-            <h1>
-                Continue your
-                <span>rescue journey.</span>
-            </h1>
+            <div class="benefit">
 
+                <div class="benefit-icon">
+                    🪙
+                </div>
+
+                <div>
+
+                    <h3>
+                        Build your impact
+                    </h3>
+
+                    <p>
+                        Earn rewards through meaningful contributions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+                    🐾
+                </div>
+
+                <div>
+
+                    <h3>
+                        Be part of the community
+                    </h3>
+
+                    <p>
+                        Every report can help someone take action.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="auth-card">
+
+
+        <div class="card-logo">
+
+            <img
+                src="coco logo.png"
+                alt="Coco Logo"
+            >
+
+        </div>
+
+
+        <div class="auth-card-header">
+
+            <h2>
+                Welcome back 👋
+            </h2>
 
             <p>
-                Log in to report animals, track your contributions,
-                earn Coco Coins and stay connected with the community.
+                Choose how you want to log in.
             </p>
 
-
-            <div class="benefits">
-
-
-                <div class="benefit">
-
-                    <div class="benefit-icon">
-                        📍
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Report & share locations
-                        </h3>
-
-                        <p>
-                            Help others find animals that need assistance.
-                        </p>
-
-                    </div>
-
-                </div>
+        </div>
 
 
+        <div class="auth-tabs">
 
-                <div class="benefit">
+            <button
+                type="button"
+                class="auth-tab active"
+                id="emailTab"
+            >
+                ✉️ Email
+            </button>
 
-                    <div class="benefit-icon">
-                        🪙
-                    </div>
+            <button
+                type="button"
+                class="auth-tab"
+                id="phoneTab"
+            >
+                📱 Phone OTP
+            </button>
 
-                    <div>
-
-                        <h3>
-                            Build your impact
-                        </h3>
-
-                        <p>
-                            Earn rewards through meaningful contributions.
-                        </p>
-
-                    </div>
-
-                </div>
-
+        </div>
 
 
-                <div class="benefit">
-
-                    <div class="benefit-icon">
-                        🐾
-                    </div>
-
-                    <div>
-
-                        <h3>
-                            Be part of the community
-                        </h3>
-
-                        <p>
-                            Every report can help someone take action.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
+        <div
+            id="message"
+            class="message"
+        ></div>
 
 
+        <!-- EMAIL LOGIN -->
 
-        <!-- LOGIN CARD -->
+        <form
+            id="emailLoginForm"
+            novalidate
+        >
 
-        <section class="auth-card">
+            <div class="form-group">
 
+                <label
+                    for="email"
+                    class="form-label"
+                >
+                    Email address
+                </label>
 
-            <div class="card-logo">
-
-                <img
-                    src="coco logo.png"
-                    alt="Coco Logo"
+                <input
+                    type="email"
+                    id="email"
+                    class="input"
+                    placeholder="you@example.com"
+                    autocomplete="email"
                 >
 
-            </div>
-
-
-            <div class="auth-card-header">
-
-                <h2>
-                    Welcome back 👋
-                </h2>
-
-                <p>
-                    Log in to continue with Coco.
+                <p
+                    id="emailError"
+                    class="error-message"
+                >
+                    Please enter a valid email address.
                 </p>
 
             </div>
 
 
-            <!-- SUCCESS MESSAGE -->
+            <div class="form-group">
 
-            <div
-                id="successMessage"
-                class="success-message"
-            >
-                Login details look valid. Authentication
-                will be connected when Firebase is added.
-            </div>
+                <label
+                    for="password"
+                    class="form-label"
+                >
+                    Password
+                </label>
 
-
-            <form id="loginForm" novalidate>
-
-
-                <!-- EMAIL -->
-
-                <div class="form-group">
-
-                    <label
-                        for="email"
-                        class="form-label"
-                    >
-                        Email address
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        class="input"
-                        placeholder="you@example.com"
-                        autocomplete="email"
-                        required
-                    >
-
-                    <p
-                        id="emailError"
-                        class="error-message"
-                    >
-                        Please enter a valid email address.
-                    </p>
-
-                </div>
-
-
-
-                <!-- PASSWORD -->
-
-                <div class="form-group">
-
-                    <label
-                        for="password"
-                        class="form-label"
-                    >
-                        Password
-                    </label>
+                <div class="input-wrapper">
 
                     <input
                         type="password"
                         id="password"
-                        name="password"
-                        class="input"
+                        class="input password-input"
                         placeholder="Enter your password"
                         autocomplete="current-password"
-                        required
                     >
 
-                    <p
-                        id="passwordError"
-                        class="error-message"
+                    <button
+                        type="button"
+                        class="show-password"
+                        id="showPassword"
                     >
-                        Password must contain at least 6 characters.
-                    </p>
+                        Show
+                    </button>
 
                 </div>
 
-
-
-                <!-- OPTIONS -->
-
-                <div class="form-options">
-
-                    <label class="remember">
-
-                        <input
-                            type="checkbox"
-                            name="remember"
-                        >
-
-                        Remember me
-
-                    </label>
-
-
-                    <a
-                        href="#"
-                        class="forgot"
-                        id="forgotPassword"
-                    >
-                        Forgot password?
-                    </a>
-
-                </div>
-
-
-
-                <!-- LOGIN BUTTON -->
-
-                <button
-                    type="submit"
-                    class="login-button"
-                    id="loginButton"
+                <p
+                    id="passwordError"
+                    class="error-message"
                 >
-                    Log in to Coco
-                </button>
+                    Please enter your password.
+                </p>
 
-
-                <!-- SUCCESS -->
-
-                <div
-                    id="successMessageBottom"
-                    class="success-message"
-                >
-                    Your details passed the basic validation.
-                </div>
-
-            </form>
-
-
-            <div class="divider">
-                OR
             </div>
 
 
-            <p class="auth-switch">
+            <div class="form-options">
 
-                Don't have a Coco account?
+                <label class="remember">
 
-                <a href="signup.html">
-                    Create an account
+                    <input
+                        type="checkbox"
+                        id="remember"
+                    >
+
+                    Remember me
+
+                </label>
+
+
+                <a
+                    class="forgot"
+                    id="forgotPassword"
+                >
+                    Forgot password?
                 </a>
 
-            </p>
-
-        </section>
-
-    </main>
+            </div>
 
 
+            <button
+                type="submit"
+                class="login-button"
+                id="loginButton"
+            >
+                Log in to Coco
+            </button>
 
-    <footer>
-
-        © 2026 Coco · Help. Rescue. Make a Difference.
-
-    </footer>
-
-
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
-    <script>
-
-        /* =========================
-           GET ELEMENTS
-        ========================= */
-
-        const loginForm =
-            document.getElementById("loginForm");
-
-        const email =
-            document.getElementById("email");
-
-        const password =
-            document.getElementById("password");
-
-        const emailError =
-            document.getElementById("emailError");
-
-        const passwordError =
-            document.getElementById("passwordError");
-
-        const loginButton =
-            document.getElementById("loginButton");
-
-        const successMessage =
-            document.getElementById("successMessage");
+        </form>
 
 
-        /* =========================
-           EMAIL VALIDATION
-        ========================= */
+        <!-- PHONE LOGIN -->
 
-        function isValidEmail(value) {
+        <form
+            id="phoneLoginForm"
+            class="hidden"
+            novalidate
+        >
 
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+            <div class="form-group">
 
-        }
+                <label
+                    for="loginPhone"
+                    class="form-label"
+                >
+                    Phone number
+                </label>
+
+                <div class="phone-row">
+
+                    <div class="country-code">
+                        +91
+                    </div>
+
+                    <input
+                        type="tel"
+                        id="loginPhone"
+                        class="input"
+                        placeholder="9876543210"
+                        maxlength="10"
+                    >
+
+                </div>
+
+                <p
+                    id="loginPhoneError"
+                    class="error-message"
+                >
+                    Enter a valid 10-digit Indian phone number.
+                </p>
+
+            </div>
 
 
-        /* =========================
-           EMAIL INPUT
-        ========================= */
-
-        email.addEventListener("input", function () {
-
-            email.classList.remove("error");
-
-            emailError.classList.remove("show");
-
-        });
+            <div id="login-recaptcha-container"></div>
 
 
-        /* =========================
-           PASSWORD INPUT
-        ========================= */
+            <div class="form-group">
 
-        password.addEventListener("input", function () {
+                <label
+                    for="loginOtp"
+                    class="form-label"
+                >
+                    OTP
+                </label>
 
-            password.classList.remove("error");
+                <div class="otp-row">
 
-            passwordError.classList.remove("show");
+                    <input
+                        type="text"
+                        id="loginOtp"
+                        class="input"
+                        placeholder="Enter 6-digit OTP"
+                        maxlength="6"
+                    >
 
-        });
+                    <button
+                        type="button"
+                        class="send-otp-button"
+                        id="loginSendOtpButton"
+                    >
+                        Send OTP
+                    </button>
+
+                </div>
+
+                <p
+                    id="loginOtpError"
+                    class="error-message"
+                >
+                    Enter the OTP sent to your phone.
+                </p>
+
+            </div>
 
 
-        /* =========================
-           LOGIN FORM
-        ========================= */
+            <button
+                type="submit"
+                class="login-button"
+                id="phoneLoginButton"
+            >
+                Verify & Log in
+            </button>
 
-        loginForm.addEventListener("submit", function (event) {
+        </form>
+
+
+        <div class="divider">
+            OR
+        </div>
+
+
+        <p class="auth-switch">
+
+            Don't have a Coco account?
+
+            <a href="signup.html">
+                Create an account
+            </a>
+
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    © 2026 Coco · Help. Rescue. Make a Difference.
+
+</footer>
+
+
+<script type="module">
+
+    import {
+        initializeApp
+    } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
+
+
+    import {
+        getAuth,
+        signInWithEmailAndPassword,
+        sendPasswordResetEmail,
+        setPersistence,
+        browserLocalPersistence,
+        browserSessionPersistence,
+        RecaptchaVerifier,
+        signInWithPhoneNumber
+    } from "https://www.gstatic.com/firebasejs/12.17.1/firebase-auth.js";
+
+
+    /* =====================================================
+       FIREBASE CONFIG
+    ===================================================== */
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCwo17fsEu4wbPoqj8PT94zvdelAT4GRhQ",
+        authDomain: "coco-be2df.firebaseapp.com",
+        projectId: "coco-be2df",
+        storageBucket: "coco-be2df.firebasestorage.app",
+        messagingSenderId: "558698026766",
+        appId: "1:558698026766:web:91a440af23e105ace3a95f"
+    };
+
+
+    const app =
+        initializeApp(firebaseConfig);
+
+
+    const auth =
+        getAuth(app);
+
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const emailTab =
+        document.getElementById("emailTab");
+
+    const phoneTab =
+        document.getElementById("phoneTab");
+
+    const emailLoginForm =
+        document.getElementById("emailLoginForm");
+
+    const phoneLoginForm =
+        document.getElementById("phoneLoginForm");
+
+    const message =
+        document.getElementById("message");
+
+
+    /* =====================================================
+       TABS
+    ===================================================== */
+
+    emailTab.addEventListener("click", () => {
+
+        emailTab.classList.add("active");
+
+        phoneTab.classList.remove("active");
+
+        emailLoginForm.classList.remove("hidden");
+
+        phoneLoginForm.classList.add("hidden");
+
+        clearMessage();
+
+    });
+
+
+    phoneTab.addEventListener("click", () => {
+
+        phoneTab.classList.add("active");
+
+        emailTab.classList.remove("active");
+
+        phoneLoginForm.classList.remove("hidden");
+
+        emailLoginForm.classList.add("hidden");
+
+        clearMessage();
+
+        setupPhoneRecaptcha();
+
+    });
+
+
+    /* =====================================================
+       MESSAGE
+    ===================================================== */
+
+    function showMessage(text, type) {
+
+        message.textContent = text;
+
+        message.className =
+            "message show " + type;
+
+    }
+
+
+    function clearMessage() {
+
+        message.textContent = "";
+
+        message.className = "message";
+
+    }
+
+
+    /* =====================================================
+       VALIDATION
+    ===================================================== */
+
+    function isValidEmail(value) {
+
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+    }
+
+
+    function isValidPhone(value) {
+
+        return /^[6-9]\d{9}$/.test(value);
+
+    }
+
+
+    function showError(input, errorId) {
+
+        input.classList.add("error");
+
+        document
+            .getElementById(errorId)
+            .classList.add("show");
+
+    }
+
+
+    function clearError(input, errorId) {
+
+        input.classList.remove("error");
+
+        document
+            .getElementById(errorId)
+            .classList.remove("show");
+
+    }
+
+
+    /* =====================================================
+       SHOW PASSWORD
+    ===================================================== */
+
+    document
+        .getElementById("showPassword")
+        .addEventListener(
+            "click",
+            () => {
+
+                const password =
+                    document.getElementById("password");
+
+                const button =
+                    document.getElementById("showPassword");
+
+
+                if (password.type === "password") {
+
+                    password.type = "text";
+
+                    button.textContent = "Hide";
+
+                } else {
+
+                    password.type = "password";
+
+                    button.textContent = "Show";
+
+                }
+
+            }
+        );
+
+
+    /* =====================================================
+       EMAIL LOGIN
+    ===================================================== */
+
+    emailLoginForm.addEventListener(
+        "submit",
+        async event => {
 
             event.preventDefault();
 
+            clearMessage();
 
-            let isValid = true;
-
-
-            /* -------------------------
-               EMAIL
-            ------------------------- */
-
-            const emailValue =
-                email.value.trim();
+            let valid = true;
 
 
-            if (!isValidEmail(emailValue)) {
+            const email =
+                document.getElementById("email");
 
-                email.classList.add("error");
+            const password =
+                document.getElementById("password");
 
-                emailError.classList.add("show");
+            const remember =
+                document.getElementById("remember");
 
-                isValid = false;
+            const loginButton =
+                document.getElementById("loginButton");
 
-            }
 
+            if (!isValidEmail(email.value.trim())) {
 
-            /* -------------------------
-               PASSWORD
-            ------------------------- */
+                showError(
+                    email,
+                    "emailError"
+                );
 
-            if (password.value.length < 6) {
-
-                password.classList.add("error");
-
-                passwordError.classList.add("show");
-
-                isValid = false;
+                valid = false;
 
             }
 
 
-            /* -------------------------
-               STOP IF INVALID
-            ------------------------- */
+            if (password.value.length === 0) {
 
-            if (!isValid) {
+                showError(
+                    password,
+                    "passwordError"
+                );
 
-                return;
+                valid = false;
 
             }
 
 
-            /* -------------------------
-               FRONTEND DEMO
-            ------------------------- */
+            if (!valid) return;
+
 
             loginButton.disabled = true;
 
             loginButton.textContent =
-                "Checking...";
+                "Logging in...";
 
 
-            setTimeout(function () {
+            try {
+
+                await setPersistence(
+                    auth,
+                    remember.checked
+                        ? browserLocalPersistence
+                        : browserSessionPersistence
+                );
+
+
+                await signInWithEmailAndPassword(
+                    auth,
+                    email.value.trim(),
+                    password.value
+                );
+
+
+                showMessage(
+                    "Login successful! Redirecting...",
+                    "success"
+                );
+
+
+                setTimeout(() => {
+
+                    window.location.href =
+                        "home.html";
+
+                }, 700);
+
+
+            } catch (error) {
+
+                console.error(
+                    "Firebase email login error:",
+                    error
+                );
+
+
+                console.error(
+                    "ERROR CODE:",
+                    error.code
+                );
+
+
+                let text =
+                    "Unable to log in. Please check your details.";
+
+
+                switch (error.code) {
+
+                    case "auth/invalid-credential":
+
+                        text =
+                            "Incorrect email or password.";
+
+                        break;
+
+
+                    case "auth/user-not-found":
+
+                        text =
+                            "No account exists with this email.";
+
+                        break;
+
+
+                    case "auth/wrong-password":
+
+                        text =
+                            "Incorrect password.";
+
+                        break;
+
+
+                    case "auth/invalid-email":
+
+                        text =
+                            "Please enter a valid email address.";
+
+                        break;
+
+
+                    case "auth/user-disabled":
+
+                        text =
+                            "This account has been disabled.";
+
+                        break;
+
+
+                    case "auth/too-many-requests":
+
+                        text =
+                            "Too many failed attempts. Please try again later.";
+
+                        break;
+
+
+                    case "auth/api-key-not-valid":
+
+                        text =
+                            "Firebase API key is invalid. Check your Firebase configuration.";
+
+                        break;
+
+
+                    case "auth/network-request-failed":
+
+                        text =
+                            "Network error. Check your internet connection.";
+
+                        break;
+
+                }
+
+
+                showMessage(
+                    text,
+                    "error"
+                );
+
 
                 loginButton.disabled = false;
 
                 loginButton.textContent =
                     "Log in to Coco";
 
-                successMessage.classList.add("show");
+            }
 
-            }, 800);
-
-        });
-
-
-        /* =========================
-           FORGOT PASSWORD
-        ========================= */
-
-        const forgotPassword =
-            document.getElementById("forgotPassword");
+        }
+    );
 
 
-        forgotPassword.addEventListener(
+    /* =====================================================
+       FORGOT PASSWORD
+    ===================================================== */
+
+    document
+        .getElementById("forgotPassword")
+        .addEventListener(
             "click",
-            function (event) {
+            async () => {
 
-                event.preventDefault();
+                clearMessage();
 
-                alert(
-                    "Password recovery will be connected when Coco authentication is added."
-                );
+
+                const email =
+                    document.getElementById("email");
+
+
+                const emailValue =
+                    email.value.trim();
+
+
+                if (!isValidEmail(emailValue)) {
+
+                    showMessage(
+                        "Enter your email address first, then click Forgot password.",
+                        "error"
+                    );
+
+                    email.focus();
+
+                    return;
+
+                }
+
+
+                try {
+
+                    await sendPasswordResetEmail(
+                        auth,
+                        emailValue
+                    );
+
+
+                    showMessage(
+                        "Password reset email sent. Check your inbox.",
+                        "success"
+                    );
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Password reset error:",
+                        error
+                    );
+
+
+                    let text =
+                        "Unable to send password reset email.";
+
+
+                    if (
+                        error.code ===
+                        "auth/user-not-found"
+                    ) {
+
+                        text =
+                            "No account exists with this email.";
+
+                    }
+
+
+                    showMessage(
+                        text,
+                        "error"
+                    );
+
+                }
 
             }
         );
 
 
-    </script>
+    /* =====================================================
+       PHONE LOGIN
+    ===================================================== */
+
+    let phoneRecaptchaVerifier = null;
+
+    let phoneConfirmationResult = null;
+
+
+    function setupPhoneRecaptcha() {
+
+        if (phoneRecaptchaVerifier) return;
+
+
+        phoneRecaptchaVerifier =
+            new RecaptchaVerifier(
+                auth,
+                "login-recaptcha-container",
+                {
+                    size: "normal"
+                }
+            );
+
+
+        phoneRecaptchaVerifier.render()
+            .catch(error => {
+
+                console.error(
+                    "Login reCAPTCHA error:",
+                    error
+                );
+
+            });
+
+    }
+
+
+    /* =====================================================
+       SEND LOGIN OTP
+    ===================================================== */
+
+    document
+        .getElementById("loginSendOtpButton")
+        .addEventListener(
+            "click",
+            async () => {
+
+                clearMessage();
+
+
+                const phone =
+                    document.getElementById("loginPhone");
+
+                const button =
+                    document.getElementById(
+                        "loginSendOtpButton"
+                    );
+
+
+                clearError(
+                    phone,
+                    "loginPhoneError"
+                );
+
+
+                const phoneValue =
+                    phone.value.trim();
+
+
+                if (!isValidPhone(phoneValue)) {
+
+                    showError(
+                        phone,
+                        "loginPhoneError"
+                    );
+
+                    return;
+
+                }
+
+
+                setupPhoneRecaptcha();
+
+
+                button.disabled = true;
+
+                button.textContent =
+                    "Sending...";
+
+
+                try {
+
+                    phoneConfirmationResult =
+                        await signInWithPhoneNumber(
+                            auth,
+                            "+91" + phoneValue,
+                            phoneRecaptchaVerifier
+                        );
+
+
+                    showMessage(
+                        "OTP sent successfully. Check your phone.",
+                        "success"
+                    );
+
+
+                    button.textContent =
+                        "OTP Sent";
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Firebase phone login error:",
+                        error
+                    );
+
+
+                    console.error(
+                        "ERROR CODE:",
+                        error.code
+                    );
+
+
+                    let text =
+                        "Unable to send OTP.";
+
+
+                    switch (error.code) {
+
+                        case "auth/invalid-phone-number":
+
+                            text =
+                                "Please enter a valid phone number.";
+
+                            break;
+
+
+                        case "auth/too-many-requests":
+
+                            text =
+                                "Too many requests. Please try again later.";
+
+                            break;
+
+
+                        case "auth/quota-exceeded":
+
+                            text =
+                                "SMS quota exceeded. Try again later.";
+
+                            break;
+
+
+                        case "auth/captcha-check-failed":
+
+                            text =
+                                "reCAPTCHA verification failed. Please try again.";
+
+                            break;
+
+
+                        case "auth/network-request-failed":
+
+                            text =
+                                "Network error. Check your internet connection.";
+
+                            break;
+
+                    }
+
+
+                    showMessage(
+                        text,
+                        "error"
+                    );
+
+
+                    button.disabled = false;
+
+                    button.textContent =
+                        "Send OTP";
+
+                }
+
+            }
+        );
+
+
+    /* =====================================================
+       VERIFY LOGIN OTP
+    ===================================================== */
+
+    phoneLoginForm.addEventListener(
+        "submit",
+        async event => {
+
+            event.preventDefault();
+
+            clearMessage();
+
+
+            const otp =
+                document.getElementById("loginOtp");
+
+            const button =
+                document.getElementById(
+                    "phoneLoginButton"
+                );
+
+
+            if (
+                !phoneConfirmationResult ||
+                !/^\d{6}$/.test(
+                    otp.value.trim()
+                )
+            ) {
+
+                showError(
+                    otp,
+                    "loginOtpError"
+                );
+
+                return;
+
+            }
+
+
+            clearError(
+                otp,
+                "loginOtpError"
+            );
+
+
+            button.disabled = true;
+
+            button.textContent =
+                "Verifying...";
+
+
+            try {
+
+                await phoneConfirmationResult.confirm(
+                    otp.value.trim()
+                );
+
+
+                showMessage(
+                    "Login successful! Redirecting...",
+                    "success"
+                );
+
+
+                setTimeout(() => {
+
+                    window.location.href =
+                        "home.html";
+
+                }, 700);
+
+
+            } catch (error) {
+
+                console.error(
+                    "OTP verification error:",
+                    error
+                );
+
+
+                console.error(
+                    "ERROR CODE:",
+                    error.code
+                );
+
+
+                let text =
+                    "Unable to verify OTP.";
+
+
+                switch (error.code) {
+
+                    case "auth/invalid-verification-code":
+
+                        text =
+                            "The OTP is incorrect.";
+
+                        break;
+
+
+                    case "auth/code-expired":
+
+                        text =
+                            "The OTP has expired. Please request a new one.";
+
+                        break;
+
+
+                    case "auth/too-many-requests":
+
+                        text =
+                            "Too many attempts. Please try again later.";
+
+                        break;
+
+                }
+
+
+                showMessage(
+                    text,
+                    "error"
+                );
+
+
+                button.disabled = false;
+
+                button.textContent =
+                    "Verify & Log in";
+
+            }
+
+        }
+    );
+
+</script>
 
 </body>
 </html>
