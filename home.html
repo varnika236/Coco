@@ -1,65 +1,1724 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coco - Home</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Custom styles if needed for specific elements */
-  </style>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Coco | Home</title>
+
+    <meta
+        name="description"
+        content="Coco animal rescue dashboard."
+    >
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: #f6faf7;
+
+            color: #17211d;
+
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        button {
+            font: inherit;
+        }
+
+
+        /* =====================================================
+           APP LAYOUT
+        ===================================================== */
+
+        .app {
+
+            min-height: 100vh;
+
+            display: flex;
+
+        }
+
+
+        /* =====================================================
+           SIDEBAR
+        ===================================================== */
+
+        .sidebar {
+
+            width: 255px;
+
+            min-height: 100vh;
+
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            display: flex;
+
+            flex-direction: column;
+
+            background: white;
+
+            border-right: 1px solid #e2eae5;
+
+            z-index: 100;
+
+        }
+
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
+
+        .sidebar-logo {
+
+            height: 82px;
+
+            padding: 0 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            border-bottom: 1px solid #edf1ee;
+
+        }
+
+
+        .sidebar-logo img {
+
+            width: 43px;
+
+            height: 43px;
+
+            object-fit: contain;
+
+        }
+
+
+        .sidebar-logo span {
+
+            font-size: 1.35rem;
+
+            font-weight: 900;
+
+            letter-spacing: 0.5px;
+
+        }
+
+
+        /* =====================================================
+           USER
+        ===================================================== */
+
+        .sidebar-user {
+
+            padding: 22px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            border-bottom: 1px solid #edf1ee;
+
+        }
+
+
+        .user-avatar {
+
+            width: 42px;
+
+            height: 42px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #dff2e7;
+
+            color: #1f7a4d;
+
+            font-weight: 900;
+
+        }
+
+
+        .user-info {
+
+            min-width: 0;
+
+        }
+
+
+        .user-info strong {
+
+            display: block;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            white-space: nowrap;
+
+            font-size: 0.88rem;
+
+        }
+
+
+        .user-info span {
+
+            display: block;
+
+            margin-top: 3px;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            white-space: nowrap;
+
+            color: #8a958f;
+
+            font-size: 0.72rem;
+
+        }
+
+
+        /* =====================================================
+           SIDEBAR NAVIGATION
+        ===================================================== */
+
+        .sidebar-nav {
+
+            padding: 24px 14px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 5px;
+
+            flex: 1;
+
+        }
+
+
+        .nav-label {
+
+            padding: 0 12px;
+
+            margin-bottom: 8px;
+
+            color: #9aa49e;
+
+            font-size: 0.68rem;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .sidebar-link {
+
+            padding: 12px 13px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            border-radius: 10px;
+
+            color: #647169;
+
+            font-size: 0.88rem;
+
+            font-weight: 700;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+
+        }
+
+
+        .sidebar-link:hover {
+
+            background: #f0f7f2;
+
+            color: #1f7a4d;
+
+        }
+
+
+        .sidebar-link.active {
+
+            background: #e7f5ec;
+
+            color: #1f7a4d;
+
+        }
+
+
+        .nav-icon {
+
+            width: 22px;
+
+            text-align: center;
+
+            font-size: 1.05rem;
+
+        }
+
+
+        /* =====================================================
+           LOGOUT
+        ===================================================== */
+
+        .sidebar-bottom {
+
+            padding: 15px;
+
+            border-top: 1px solid #edf1ee;
+
+        }
+
+
+        .logout-button {
+
+            width: 100%;
+
+            padding: 11px 13px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: transparent;
+
+            color: #9a6865;
+
+            cursor: pointer;
+
+            font-weight: 700;
+
+            text-align: left;
+
+        }
+
+
+        .logout-button:hover {
+
+            background: #fff1f0;
+
+            color: #c53f3a;
+
+        }
+
+
+        /* =====================================================
+           MAIN CONTENT
+        ===================================================== */
+
+        .main-content {
+
+            width: calc(100% - 255px);
+
+            margin-left: 255px;
+
+            min-height: 100vh;
+
+        }
+
+
+        /* =====================================================
+           TOP BAR
+        ===================================================== */
+
+        .topbar {
+
+            height: 82px;
+
+            padding: 0 42px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            background: rgba(255,255,255,0.92);
+
+            border-bottom: 1px solid #e4ebe6;
+
+            backdrop-filter: blur(12px);
+
+        }
+
+
+        .topbar-title h1 {
+
+            font-size: 1.25rem;
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .topbar-title p {
+
+            color: #89948d;
+
+            font-size: 0.76rem;
+
+        }
+
+
+        .mobile-menu {
+
+            display: none;
+
+            border: none;
+
+            background: transparent;
+
+            font-size: 1.5rem;
+
+            cursor: pointer;
+
+        }
+
+
+        .topbar-profile {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+
+        .topbar-avatar {
+
+            width: 37px;
+
+            height: 37px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #dff2e7;
+
+            color: #1f7a4d;
+
+            font-size: 0.85rem;
+
+            font-weight: 900;
+
+        }
+
+
+        /* =====================================================
+           CONTENT
+        ===================================================== */
+
+        .content {
+
+            width: min(1180px, 92%);
+
+            margin: auto;
+
+            padding: 35px 0 50px;
+
+        }
+
+
+        /* =====================================================
+           WELCOME HERO
+        ===================================================== */
+
+        .welcome-card {
+
+            padding: 35px 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e7f5ec,
+                    #f7fcf9
+                );
+
+            border: 1px solid #d9ebe0;
+
+        }
+
+
+        .welcome-text {
+
+            max-width: 650px;
+
+        }
+
+
+        .welcome-text .eyebrow {
+
+            display: inline-block;
+
+            margin-bottom: 12px;
+
+            color: #1f7a4d;
+
+            font-size: 0.75rem;
+
+            font-weight: 800;
+
+        }
+
+
+        .welcome-text h2 {
+
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+
+            line-height: 1.1;
+
+            letter-spacing: -1px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .welcome-text p {
+
+            max-width: 600px;
+
+            color: #647169;
+
+            line-height: 1.6;
+
+            font-size: 0.9rem;
+
+        }
+
+
+        .hero-paw {
+
+            font-size: 5rem;
+
+            opacity: 0.75;
+
+        }
+
+
+        /* =====================================================
+           PRIMARY ACTION
+        ===================================================== */
+
+        .report-button {
+
+            margin-top: 20px;
+
+            padding: 12px 18px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            border-radius: 10px;
+
+            background: #1f7a4d;
+
+            color: white;
+
+            font-size: 0.85rem;
+
+            font-weight: 800;
+
+            transition:
+                background 0.2s ease,
+                transform 0.2s ease;
+
+        }
+
+
+        .report-button:hover {
+
+            background: #17643d;
+
+            transform: translateY(-1px);
+
+        }
+
+
+        /* =====================================================
+           SECTION HEADER
+        ===================================================== */
+
+        .section-header {
+
+            margin-top: 34px;
+
+            margin-bottom: 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .section-header h2 {
+
+            font-size: 1.1rem;
+
+        }
+
+
+        .section-header a {
+
+            color: #1f7a4d;
+
+            font-size: 0.76rem;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =====================================================
+           STAT CARDS
+        ===================================================== */
+
+        .stats-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 16px;
+
+        }
+
+
+        .stat-card {
+
+            padding: 21px;
+
+            background: white;
+
+            border: 1px solid #e2eae5;
+
+            border-radius: 15px;
+
+        }
+
+
+        .stat-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .stat-icon {
+
+            width: 39px;
+
+            height: 39px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #e8f5ed;
+
+            font-size: 1rem;
+
+        }
+
+
+        .stat-card h3 {
+
+            margin-top: 17px;
+
+            font-size: 1.7rem;
+
+        }
+
+
+        .stat-card p {
+
+            margin-top: 3px;
+
+            color: #87928c;
+
+            font-size: 0.75rem;
+
+        }
+
+
+        /* =====================================================
+           QUICK ACTIONS
+        ===================================================== */
+
+        .quick-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 13px;
+
+        }
+
+
+        .quick-card {
+
+            padding: 18px;
+
+            background: white;
+
+            border: 1px solid #e2eae5;
+
+            border-radius: 14px;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .quick-card:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 25px rgba(35,70,52,0.07);
+
+        }
+
+
+        .quick-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-bottom: 12px;
+
+            border-radius: 10px;
+
+            background: #e8f5ed;
+
+        }
+
+
+        .quick-card h3 {
+
+            font-size: 0.85rem;
+
+            margin-bottom: 4px;
+
+        }
+
+
+        .quick-card p {
+
+            color: #89948e;
+
+            font-size: 0.72rem;
+
+            line-height: 1.4;
+
+        }
+
+
+        /* =====================================================
+           RECENT ACTIVITY
+        ===================================================== */
+
+        .activity-card {
+
+            overflow: hidden;
+
+            background: white;
+
+            border: 1px solid #e2eae5;
+
+            border-radius: 15px;
+
+        }
+
+
+        .activity-item {
+
+            padding: 17px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            border-bottom: 1px solid #edf1ee;
+
+        }
+
+
+        .activity-item:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .activity-left {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+        }
+
+
+        .activity-icon {
+
+            width: 38px;
+
+            height: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #f0f7f2;
+
+        }
+
+
+        .activity-info strong {
+
+            display: block;
+
+            font-size: 0.83rem;
+
+        }
+
+
+        .activity-info span {
+
+            display: block;
+
+            margin-top: 3px;
+
+            color: #8b958f;
+
+            font-size: 0.71rem;
+
+        }
+
+
+        .status {
+
+            padding: 5px 9px;
+
+            border-radius: 999px;
+
+            background: #e7f5ec;
+
+            color: #1f7a4d;
+
+            font-size: 0.68rem;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1050px) {
+
+            .quick-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 850px) {
+
+            .sidebar {
+
+                transform:
+                    translateX(-100%);
+
+                transition:
+                    transform 0.25s ease;
+
+            }
+
+
+            .sidebar.open {
+
+                transform:
+                    translateX(0);
+
+            }
+
+
+            .main-content {
+
+                width: 100%;
+
+                margin-left: 0;
+
+            }
+
+
+            .mobile-menu {
+
+                display: block;
+
+            }
+
+
+            .topbar {
+
+                padding: 0 20px;
+
+            }
+
+
+            .welcome-card {
+
+                padding: 27px;
+
+            }
+
+
+            .hero-paw {
+
+                display: none;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .content {
+
+                width: 94%;
+
+                padding-top: 22px;
+
+            }
+
+
+            .stats-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .quick-grid {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+
+            .welcome-text h2 {
+
+                font-size: 1.8rem;
+
+            }
+
+
+            .topbar-title p {
+
+                display: none;
+
+            }
+
+
+            .topbar-profile {
+
+                display: none;
+
+            }
+
+        }
+
+
+        @media (max-width: 420px) {
+
+            .quick-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+    </style>
+
 </head>
-<body class="bg-gradient-to-br from-green-100 via-white to-green-200 min-h-screen flex flex-col">
 
-  <!-- Reward Section (Top-right corner) -->
-  <div class="absolute top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-full shadow-md">
-    <span class="font-bold text-lg"><button type="submit"><a href="reward.html"  class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-2 rounded-lg transition">
-        Coins:50
-      </a></button></span>
-  </div>
 
-  <!-- Main Content -->
-  <div class="flex flex-col items-center justify-center space-y-8 mt-16 px-4 sm:px-8 md:px-16">
-    
-    <!-- Header with Logo -->
-    <div class="text-center">
-      <img src="coco logo.png" alt="Coco Logo" class="h-24 w-24 mb-4" align-items= "center"/>
-      <h1 class="text-3xl font-semibold text-green-700">Welcome to Coco</h1>
-      <p class="text-lg text-gray-700">Help protect animals and earn rewards!</p>
-    </div>
+<body data-auth-page="true">
 
-    <!-- Location Button -->
-    <div class="w-full max-w-md text-center">
-    <a href="https://www.google.com/maps/place/28%C2%B042'00.6%22N+77%C2%B026'24.2%22E/@28.700172,77.4374861,17z/data=!3m1!4b1!4m4!3m3!8m2!3d28.700172!4d77.440061?entry=ttu&g_ep=EgoyMDI1MDUxNS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D">
-      <button onclick="getLocation()" class="w-full bg-green-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition">
-        Share Your Location
-      </button>
-    </a>
-      <p id="locationOutput" class="mt-2 text-gray-500 text-sm"></p>
-    </div>
 
-    <!-- Capture Animal Photo & Type Section -->
-    <div class="w-full max-w-md text-center space-y-4">
-      <button onclick="triggerCamera()" class="w-full bg-blue-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"><a href="camera2.html">
-        Click Picture of Animal</a>
-      </button>
+<div class="app">
 
-      <div>
-        <label for="animalDescription" class="block text-gray-600 font-medium">Animal Description</label>
-        <input type="text" id="animalDescription" name="animalDescription" placeholder="Enter Animal Description" class="w-full border border-gray-300 rounded-lg px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-      </div>
-    </div>
 
-  </div>
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
 
-  <!-- Camera Functionality (Optional) -->
- 
-  <script>
-    function triggerCamera() {
-      alert("Camera functionality is not implemented in this demo.");
-      // You can integrate camera functionality using HTML5 Camera API or a library.
+    <aside class="sidebar" id="sidebar">
+
+
+        <!-- LOGO -->
+
+        <a
+            href="home.html"
+            class="sidebar-logo"
+        >
+
+            <img
+                src="coco logo.png"
+                alt="Coco Logo"
+            >
+
+            <span>COCO</span>
+
+        </a>
+
+
+        <!-- USER -->
+
+        <div class="sidebar-user">
+
+            <div
+                class="user-avatar"
+                data-user-initial
+            >
+                C
+            </div>
+
+            <div class="user-info">
+
+                <strong data-user-name>
+                    Loading...
+                </strong>
+
+                <span data-user-email>
+                    Loading...
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+
+            <div class="nav-label">
+                Workspace
+            </div>
+
+
+            <a
+                href="home.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">
+                    🏠
+                </span>
+
+                Home
+
+            </a>
+
+
+            <a
+                href="report.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">
+                    📸
+                </span>
+
+                Report Animal
+
+            </a>
+
+
+            <a
+                href="reward.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">
+                    🪙
+                </span>
+
+                Rewards
+
+            </a>
+
+
+            <div
+                class="nav-label"
+                style="margin-top: 18px;"
+            >
+                Account
+            </div>
+
+
+            <a
+                href="profile.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">
+                    👤
+                </span>
+
+                Profile
+
+            </a>
+
+
+            <a
+                href="settings.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">
+                    ⚙️
+                </span>
+
+                Settings
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- LOGOUT -->
+
+        <div class="sidebar-bottom">
+
+            <button
+                class="logout-button"
+                data-logout
+                type="button"
+            >
+
+                <span class="nav-icon">
+                    ↪
+                </span>
+
+                Log out
+
+            </button>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =================================================
+         MAIN
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div
+                class="topbar-title"
+            >
+
+                <button
+                    class="mobile-menu"
+                    id="mobileMenu"
+                    type="button"
+                >
+                    ☰
+                </button>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p>
+                    Your impact starts with one action.
+                </p>
+
+            </div>
+
+
+            <div class="topbar-profile">
+
+                <div
+                    class="topbar-avatar"
+                    data-user-initial
+                >
+                    C
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+
+            <!-- =================================================
+                 WELCOME
+            ================================================== -->
+
+            <section class="welcome-card">
+
+
+                <div class="welcome-text">
+
+                    <div class="eyebrow">
+                        🐾 Welcome back
+                    </div>
+
+
+                    <h2>
+
+                        Hi,
+                        <span data-user-name>
+                            there
+                        </span>!
+
+                        <br>
+
+                        Ready to make an impact?
+
+                    </h2>
+
+
+                    <p>
+
+                        Every report gives an animal a better
+                        chance of getting the help it needs.
+                        Share what you see and let the Coco
+                        community take action.
+
+                    </p>
+
+
+                    <a
+                        href="report.html"
+                        class="report-button"
+                    >
+
+                        📸
+
+                        Report an animal
+
+                    </a>
+
+                </div>
+
+
+                <div class="hero-paw">
+
+                    🐾
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 IMPACT
+            ================================================== -->
+
+            <div class="section-header">
+
+                <h2>
+                    Your impact
+                </h2>
+
+                <a href="profile.html">
+                    View profile →
+                </a>
+
+            </div>
+
+
+            <section class="stats-grid">
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Reports
+                        </span>
+
+                        <div class="stat-icon">
+                            📸
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        0
+                    </h3>
+
+                    <p>
+                        Reports submitted
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Animals helped
+                        </span>
+
+                        <div class="stat-icon">
+                            🐾
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        0
+                    </h3>
+
+                    <p>
+                        Animals reached
+                    </p>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Coco Coins
+                        </span>
+
+                        <div class="stat-icon">
+                            🪙
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        0
+                    </h3>
+
+                    <p>
+                        Available rewards
+                    </p>
+
+                </article>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 QUICK ACTIONS
+            ================================================== -->
+
+            <div class="section-header">
+
+                <h2>
+                    Quick actions
+                </h2>
+
+            </div>
+
+
+            <section class="quick-grid">
+
+
+                <a
+                    href="report.html"
+                    class="quick-card"
+                >
+
+                    <div class="quick-icon">
+                        📸
+                    </div>
+
+                    <h3>
+                        Report an animal
+                    </h3>
+
+                    <p>
+                        Submit a photo, location and details.
+                    </p>
+
+                </a>
+
+
+                <a
+                    href="reward.html"
+                    class="quick-card"
+                >
+
+                    <div class="quick-icon">
+                        🪙
+                    </div>
+
+                    <h3>
+                        Coco Rewards
+                    </h3>
+
+                    <p>
+                        See your coins and available rewards.
+                    </p>
+
+                </a>
+
+
+                <a
+                    href="profile.html"
+                    class="quick-card"
+                >
+
+                    <div class="quick-icon">
+                        👤
+                    </div>
+
+                    <h3>
+                        Your profile
+                    </h3>
+
+                    <p>
+                        View your Coco contribution history.
+                    </p>
+
+                </a>
+
+
+                <a
+                    href="settings.html"
+                    class="quick-card"
+                >
+
+                    <div class="quick-icon">
+                        ⚙️
+                    </div>
+
+                    <h3>
+                        Settings
+                    </h3>
+
+                    <p>
+                        Manage your account preferences.
+                    </p>
+
+                </a>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 RECENT ACTIVITY
+            ================================================== -->
+
+            <div class="section-header">
+
+                <h2>
+                    Recent activity
+                </h2>
+
+            </div>
+
+
+            <section class="activity-card">
+
+
+                <div class="activity-item">
+
+
+                    <div class="activity-left">
+
+                        <div class="activity-icon">
+                            🐾
+                        </div>
+
+
+                        <div class="activity-info">
+
+                            <strong>
+                                Welcome to Coco
+                            </strong>
+
+                            <span>
+                                Your activity will appear here.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="status">
+                        Started
+                    </span>
+
+
+                </div>
+
+
+                <div class="activity-item">
+
+
+                    <div class="activity-left">
+
+                        <div class="activity-icon">
+                            📸
+                        </div>
+
+
+                        <div class="activity-info">
+
+                            <strong>
+                                Submit your first report
+                            </strong>
+
+                            <span>
+                                Help the community identify an animal in need.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="report.html"
+                        class="status"
+                    >
+                        Report
+                    </a>
+
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     MOBILE SIDEBAR
+===================================================== -->
+
+<script>
+
+    const mobileMenu =
+        document.getElementById("mobileMenu");
+
+    const sidebar =
+        document.getElementById("sidebar");
+
+
+    if (mobileMenu) {
+
+        mobileMenu.addEventListener(
+            "click",
+            () => {
+
+                sidebar.classList.toggle(
+                    "open"
+                );
+
+            }
+        );
+
     }
-  </script>
+
+
+    document
+        .querySelectorAll(".sidebar-link")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    sidebar.classList.remove(
+                        "open"
+                    );
+
+                }
+            );
+
+        });
+
+</script>
+
+
+<!-- =====================================================
+     COCO SHARED SCRIPT
+===================================================== -->
+
+<script
+    type="module"
+    src="script.js"
+></script>
+
 
 </body>
+
 </html>
